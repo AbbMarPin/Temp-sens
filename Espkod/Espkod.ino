@@ -94,7 +94,7 @@ if (isnan(dht.getHumidity())) {
     
     
     //Serial.print("Temperature: ");
-    temperature = sensor.getHumidity();
+    temperature = sensor.getTemperature();
     //Serial.print(temperature, 1);
     //Serial.println(F("°C"));
     
@@ -121,7 +121,7 @@ Response makeRequest(String type, String uri, String query, String payload)
   // Connect to API host
   if(client.connect(host, 443))
   {
-      Serial.println(type   +"   "+host+ "/" + stage + uri + "?" + query + " HTTP/1.1");
+      Serial.println(type+"  "+host+ "/" + stage + uri + "?" + query);
       Serial.println(payload);
     // // Writing HTTP request
     client.println(type + " /" + stage + uri + "?" + query + " HTTP/1.1");
@@ -176,6 +176,7 @@ Response makeRequest(String type, String uri, String query, String payload)
     }
 
     // Return our response
+    Serial.println(res.payload);
     return res;
   }
   else
@@ -285,7 +286,7 @@ void loop() {
     Serial.print("Skickar data. Storlek: ");
     Serial.println(payload.length());
     // Send the data
-    makeRequest("POST", "/device/data", name, payload);
+    makeRequest("POST", "/data", name, payload);
     Serial.print("Väntar ");
     Serial.print(updateInterval);
     Serial.println(" millisekunder.");
