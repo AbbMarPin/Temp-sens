@@ -321,6 +321,8 @@ void loop() {
     Serial.println(payload.length());
     // Send the data
     makeRequest("POST", "/data", name, payload);
+
+    UpdateUpdateFreq();
     Serial.print("Väntar ");
     Serial.print(updateInterval);
     Serial.println(" millisekunder.");
