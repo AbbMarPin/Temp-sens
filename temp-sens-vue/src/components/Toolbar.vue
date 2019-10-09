@@ -1,4 +1,4 @@
-<!--<template>
+<template>
   <v-app id="inspire">
 
 
@@ -11,9 +11,15 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Snurrig.se</v-toolbar-title>
+      <!-- En "v-spacer" fyller allt utrymme mellan två "object", det är lite lättare att använda dessa än det ni gjorde tidigare -->
       <v-spacer/>
-      <v-app-bar-nav-icon to:='/settings'><v-icon>mdi-settings</v-icon></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon to='/settings'><v-icon>mdi-settings</v-icon></v-app-bar-nav-icon>
     </v-app-bar>
+    <img srv="./assets/logo.png"> <!-- Denna logga finns ej, inget texture -->
+    <!-- Dessa router links är "permanenta" och följer med vid sidbyte, rekommenderar att ta bort dem innan ni lämnar in uppgiften åtminstone -->
+    <router-link to="/">Startsida</router-link>
+    <router-link to="settings">settings</router-link>
+    <router-link to="Login">Login</router-link>
 
     <v-navigation-drawer
       v-model="drawer"
@@ -36,7 +42,8 @@
       fixed
       temporary
     ></v-navigation-drawer>
-    
+
+         <!-- vad sker här?? -->
     <v-content>
       <v-container
         class="fill-height"
@@ -71,7 +78,7 @@
       temporary
     ></v-navigation-drawer>
 
-    <v-footer
+ <!--   <v-footer
       app
       color="blue-grey"
       class="white--text"
@@ -79,7 +86,7 @@
       <span>Vuetify</span>
       <div class="flex-grow-1"></div>
       <span>&copy; 2019</span>
-    </v-footer>
+    </v-footer> -->
   </v-app>
 </template>
 

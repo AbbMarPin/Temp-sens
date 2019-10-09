@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <img srv="./assets/logo.png">
-    <router-link to="HelloWorld">HelloWorld</router-link>
-    <router-link to="Base">Base</router-link>
+    <Toolbar/>
     <router-view/>
+    <Footer/>
   </div>
 </template>
 
 <script>
+import Toolbar from './components/Toolbar'
+import Footer from './components/Footer'
 export default{
+  components: { Toolbar, Footer },
   name: 'app'
 }
+
 </script>
 
 <style>

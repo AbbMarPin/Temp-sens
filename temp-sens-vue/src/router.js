@@ -5,6 +5,8 @@ import Home from './views/Home.vue'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
@@ -12,14 +14,15 @@ export default new Router({
       component: Home
     },
     {
-      path: '/Base',
-      name: 'Base',
-      component: () => import('./views/Base.vue')
+      path: '/Login',
+      name: 'Login',
+      component: () => import('./views/Login.vue')
     },
     {
-      path: '/HelloWorld',
-      name: 'HelloWorld',
-      component: () => import('./views/HelloWorld.vue')
+      // Det funkar så rör ej!!
+      path: '/settings',
+      name: 'settings',
+      component: () => import('./views/Settingsingar.vue') //Fråga inte...
     }
   ]
 })
