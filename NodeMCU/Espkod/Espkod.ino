@@ -208,11 +208,12 @@ void UpdateUpdateFreq(){
       // Find the end of the value
       int updateIntervalEnd = getRes.payload.indexOf(',', updateIntervalStart);
       // Take the appropriate substring from the response
-      int updateInterval1 = getRes.payload.substring(updateIntervalStart, updateIntervalEnd).toInt() * 1000;
+      int newupdateInterval = getRes.payload.substring(updateIntervalStart, updateIntervalEnd).toInt() * 1000;
 
-      if (updateInterval != updateInterval1){+
-        updateInterval = updateInterval1;
-        Serial.println("Den nya uppdateringsfrekvensen är", updateInterval);
+      if (updateInterval != newupdateInterval){
+        updateInterval = newupdateInterval;
+        Serial.print("Den nya uppdateringsfrekvensen är ");
+        Serial.println(updateInterval);
       }
     
     
