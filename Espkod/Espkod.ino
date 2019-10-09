@@ -18,7 +18,7 @@ const String host = "y5litcpqqk.execute-api.us-east-1.amazonaws.com";
 // API Stage to use, paste your stage name here
 const String stage = "test1";
 
-const String name = "Name=Test_dude"; //Name of unit
+const String name = "Name=dude"; //Name of unit
 // Warning: This fingerprint expires December 14th 2019.
 // To update it, view the SSL certificate in your browser:
 //  1. Go to the host URL, se example belwo
@@ -242,17 +242,20 @@ void setup() {
     Serial.print("Enhet hittades ");
 
     // Find isRegistered and updateInterval
-    int updateIntervalIndex = getRes.payload.indexOf("\"UpdateFrequens\":");
+    int registeredIndex = getRes.payload.indexOf("\"isRegistered\":");
+    int updateIntervalIndex = getRes.payload.indexOf("\"UpdateFreq\":");
     // If both keys are found
-    if(updateIntervalIndex >= 0)
+    if(registeredIndex >= 0 && updateIntervalIndex >= 0)
     {
       // Jump to isRegistered value
+      int registeredStart = registeredIndex + 15;
       // Take the appropriate substring from the response
       // Since it's 5 characters, the response will be "false" or "true,"
       // The colon after "true" is the next key in the object
+      String registered = getRes.payload.substring(registeredStart, registeredStart + 5);
 
       // Jump to updateInterval value
-      int updateIntervalStart = updateIntervalIndex + 17;
+      int updateIntervalStart = updateIntervalIndex + 13;
       // Find the end of the value
       int updateIntervalEnd = getRes.payload.indexOf(',', updateIntervalStart);
       // Take the appropriate substring from the response
