@@ -191,6 +191,36 @@ Response makeRequest(String type, String uri, String query, String payload)
   }
 }
 
+void UpdateUpdateFreq(){
+
+  Response getRes = makeRequest("GET", "/device", name , "");
+
+  if(getRes.statusCode == 404){
+    Serial.println("Enhet hittades inte, starta om");
+  } else if(getRes.statusCode == 200) // OK
+  {
+    int updateIntervalIndex = getRes.payload.indexOf("\"UpdateFreq\":");
+
+    if(updateIntervalIndex >= 0){
+
+      // Jump to updateInterval value
+      int updateIntervalStart = updateIntervalIndex + 13;
+      // Find the end of the value
+      int updateIntervalEnd = getRes.payload.indexOf(',', updateIntervalStart);
+      // Take the appropriate substring from the response
+      int updateInterval1 = getRes.payload.substring(updateIntervalStart, updateIntervalEnd).toInt() * 1000;
+
+      if (updateInterval != updateInterval1){+
+        updateInterval = updateInterval1;
+        Serial.println("Den nya uppdateringsfrekvensen är", updateInterval);
+      }
+    
+    
+    }
+  }
+
+
+}
 
 void setup() {
   Wire.begin(12,13);
