@@ -18,7 +18,7 @@ const String host = "y5litcpqqk.execute-api.us-east-1.amazonaws.com";
 // API Stage to use, paste your stage name here
 const String stage = "test1";
 
-const String name = "Name=dude"; //Name of unit
+const String name = "Name=Harelys_Mätare"; //Name of unit
 // Warning: This fingerprint expires December 14th 2019.
 // To update it, view the SSL certificate in your browser:
 //  1. Go to the host URL, se example belwo
@@ -42,7 +42,7 @@ struct Response
 WiFiClientSecure client;
 
 // Important values from database
-int updateInterval = 5000;
+int updateInterval = 10000;
 
 // Prints the steps to register a device
 void printRegisterGuide()
@@ -87,14 +87,15 @@ if (isnan(dht.getHumidity())) {
   // - false indicates that either sensor is not ready or crc validation failed
   //   use getErrorCode() to check for cause of error.
   if (sensor.measure()) {
-    //  Serial.print(" Humidity: ");
     humidity = sensor.getHumidity();
+
+    //  Serial.print(" Humidity: "); // Verbose
     //Serial.print(humidity, 1);
     //Serial.println(F("%"));
     
-    
-    //Serial.print("Temperature: ");
     temperature = sensor.getTemperature();
+    
+    //Serial.print("Temperature: "); // Verbose
     //Serial.print(temperature, 1);
     //Serial.println(F("°C"));
     
@@ -193,10 +194,10 @@ Response makeRequest(String type, String uri, String query, String payload)
 
 void UpdateUpdateFreq(){
 
-  Response getRes = makeRequest("GET", "/device", name , "");
+  Response getRes = makeRequest("GET", "/device", name , ""); // Gett current device data including updatefreq
 
-  if(getRes.statusCode == 404){
-    Serial.println("Enhet hittades inte, starta om");
+  if(getRes.statusCode == 404){ // 404 Error if no device is found
+    Serial.println("Enhet hittades inte, starta om tack"); // only possible if device is deleted from the database while running
   } else if(getRes.statusCode == 200) // OK
   {
     int updateIntervalIndex = getRes.payload.indexOf("\"UpdateFreq\":");
@@ -207,10 +208,10 @@ void UpdateUpdateFreq(){
       int updateIntervalStart = updateIntervalIndex + 13;
       // Find the end of the value
       int updateIntervalEnd = getRes.payload.indexOf(',', updateIntervalStart);
-      // Take the appropriate substring from the response
+      // Take the appropriate substring from the response, convert seconds to milliseconds
       int newupdateInterval = getRes.payload.substring(updateIntervalStart, updateIntervalEnd).toInt() * 1000;
 
-      if (updateInterval != newupdateInterval){
+      if (updateInterval != newupdateInterval){ // if the new updatefreq is different from the current one
         updateInterval = newupdateInterval;
         Serial.print("Den nya uppdateringsfrekvensen är ");
         Serial.println(updateInterval);
@@ -227,23 +228,16 @@ void setup() {
   Wire.begin(12,13);
   // Begin serial communication
   Serial.begin(115200);
-  delay(2000);
+  delay(2000); // wait 2000 milliseconds to make sure device is ready
 
 
   Serial.print("Ansluter till ");
   Serial.print(".");
-  WiFiManager wifiManager;
-  wifiManager.autoConnect("_Martins Fräna Nätverk", "1234567890"); //Döp om Wifihotspoten (Mikrokontrollen) genom att ändra namnet innanför parameterarna.
-  // Connecting to WiFi access point //OldWAy/Slowway
-  // WiFi.begin(ssid, password);
-
-  // while(WiFi.status() != WL_CONNECTED)
-  // {
-  //   delay(500);
-  //   Serial.print(".");
-  // }
+  WiFiManager wifiManager; 
+  wifiManager.autoConnect("_Martins Fräna Nätverk", "1234567890"); // Döp om Wifihotspoten (Mikrokontrollen) genom att ändra namnet innanför parameterarna.
+ // ^^^ används bara om ett känt nätverk inte hittas
   
-  Serial.print("Klar\nLokal IP-adress: ");
+  Serial.print("Klar\nLokal IP-adress: "); // Skriv lite info
   Serial.println(WiFi.localIP());
   Serial.print("MAC-adress: ");
   Serial.println(WiFi.macAddress());
@@ -265,7 +259,7 @@ void setup() {
     {
       // Give instructions to user
       Serial.println("Enhet skapad, gör följande steg:");
-      printRegisterGuide();
+      printRegisterGuide();  // fixa när det finns instruktioner att följa
     }
   }
   else if(getRes.statusCode == 200) // OK
@@ -303,7 +297,6 @@ void setup() {
     }
     // If either key (isRegistered or updateInterval) is not found
     
-    
   }
 }
 
@@ -313,8 +306,6 @@ void loop() {
     // Get current temperature and humidity
     MeasureData();
 
-   
-
     // Payload to send to API
     String payload = "{\"temp\":" + String(temperature) + ",\"hum\":" + String(humidity) + "}";
     Serial.print("Skickar data. Storlek: ");
@@ -322,7 +313,7 @@ void loop() {
     // Send the data
     makeRequest("POST", "/data", name, payload);
 
-    UpdateUpdateFreq();
+    UpdateUpdateFreq(); // get new updatefreq every loop
     Serial.print("Väntar ");
     Serial.print(updateInterval);
     Serial.println(" millisekunder.");
