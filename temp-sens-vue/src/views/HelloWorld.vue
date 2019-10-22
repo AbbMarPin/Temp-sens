@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-layout
-      text-center
+      text-end
       wrap
     >
       <v-flex xs12>

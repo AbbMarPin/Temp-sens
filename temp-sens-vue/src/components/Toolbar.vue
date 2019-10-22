@@ -9,19 +9,26 @@
       color="blue-grey"
       dark
     >
+       <v-flex xs2 ml1 mr2 
+          
+          class="pa-2">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>Snurrig.se</v-toolbar-title> 
+         </v-flex>
+         <v-flex xs4>
+      <v-toolbar-title>
+        <router-link id=b45 to="/">Snurrig.se</router-link>
+        </v-toolbar-title> 
       <!-- genom att lägga router-links direkt under inkluderas de i snurrig.se-toolbaren-->
       <!-- Dessa router links är "permanenta" och följer med vid sidbyte, rekommenderar att ta bort dem innan ni lämnar in uppgiften åtminstone -->
-         <router-link id= b45 to="/">Snurrig.se</router-link>
+   </v-flex>
     <!-- <router-link id= b44 to="Settings">Settings</router-link> -->
-    <v-layout row>
-      <v-flex>
+    <!-- <v-layout row> -->
+      <v-flex xs4>
         
         <!-- v-flex och v-layout gör att vi kan flytta på login och snurrig.se med ex. justify center -->
-    <router-link id= b44 to="Login">Login/Sign in</router-link>
+    <router-link class="right" id=b44 to="Login">Login/Sign in</router-link>
     </v-flex>
-</v-layout>
+<!-- </v-layout> -->
 
       <!-- En "v-spacer" fyller allt utrymme mellan två "object", det är lite lättare att använda dessa än det ni gjorde tidigare -->
       <v-spacer/>
@@ -112,15 +119,15 @@
 
 <style>
 #b44{
-  font-size: 14px !important;
-  text-decoration: underline overline;
+  font-size: 16px !important;
+  text-decoration: none;
   text-align: center;
   color: white;
 
 }
 #b45{
-  font-size: 20px;
-  text-decoration: underline overline;
+  font-size: 22px;
+  text-decoration: none;
   color: white;
 }
 </style>
