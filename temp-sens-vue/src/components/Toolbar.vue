@@ -16,7 +16,9 @@
       v-model="drawer"
       absolute
       temporary
-    >
+      class="deep-purple accent-4"
+      dark
+      >
       <v-list dense>
         <v-list-item-title id=b48>Menu</v-list-item-title>
 
@@ -49,7 +51,7 @@
     </v-flex>
      
       <v-spacer/>                                                                                        <!-- En "v-spacer" fyller allt utrymme mellan två "object", det är lite lättare att använda dessa än det ni gjorde tidigare -->
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" to='/settings'><v-icon id=b46>mdi-settings</v-icon></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click.stop="icon = !icon" to='/settings'><v-icon id=b46>mdi-settings</v-icon></v-app-bar-nav-icon>
     </v-app-bar>
     <img srv="./assets/logo.png">                                                                   <!-- Denna logga finns ej, inget texture -->
 
