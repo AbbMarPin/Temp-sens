@@ -26,5 +26,6 @@ export default new Router({
       name: 'settings',
       component: () => import('./views/Settingsingar.vue') //Fråga inte...
     }
+    
   ]
 })

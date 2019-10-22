@@ -1,3 +1,4 @@
+<!--
 <template>
   <v-container>
     <v-layout
@@ -140,3 +141,4 @@ export default {
   }),
 };
 </script>
+-->

@@ -23,13 +23,12 @@
    </v-flex>
     <!-- <router-link id= b44 to="Settings">Settings</router-link> -->
     <!-- <v-layout row> -->
-      <v-flex xs4>
+      <v-flex xs4 offset-xs8>
         
         <!-- v-flex och v-layout gör att vi kan flytta på login och snurrig.se med ex. justify center -->
     <router-link class="right" id=b44 to="Login">Login/Sign in</router-link>
     </v-flex>
 <!-- </v-layout> -->
-
       <!-- En "v-spacer" fyller allt utrymme mellan två "object", det är lite lättare att använda dessa än det ni gjorde tidigare -->
       <v-spacer/>
       <v-app-bar-nav-icon to='/settings'><v-icon>mdi-settings</v-icon></v-app-bar-nav-icon>

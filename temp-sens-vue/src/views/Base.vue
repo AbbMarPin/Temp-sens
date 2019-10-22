@@ -1,3 +1,4 @@
+<!--
 <template>
   <v-app id="inspire">
     <v-content>
@@ -91,3 +92,4 @@
     }),
   }
 </script>
+-->
