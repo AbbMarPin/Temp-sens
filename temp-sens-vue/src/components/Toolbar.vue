@@ -1,63 +1,99 @@
 <template>
   <v-app id="inspire">
 
-
-
    <v-app-bar
       app
       clipped-right
-      color="blue-grey"
+      color="white"
       dark
     >
        <v-flex xs2 ml1 mr2 
           
           class="pa-2">
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-         </v-flex>
-         <v-flex xs4>
-      <v-toolbar-title>
-        <router-link id=b45 to="/">Snurrig.se</router-link>
-        </v-toolbar-title> 
-      <!-- genom att lägga router-links direkt under inkluderas de i snurrig.se-toolbaren-->
-      <!-- Dessa router links är "permanenta" och följer med vid sidbyte, rekommenderar att ta bort dem innan ni lämnar in uppgiften åtminstone -->
-   </v-flex>
-    <!-- <router-link id= b44 to="Settings">Settings</router-link> -->
-    <!-- <v-layout row> -->
-      <v-flex xs4 offset-xs8>
-        
-        <!-- v-flex och v-layout gör att vi kan flytta på login och snurrig.se med ex. justify center -->
-    <router-link class="right" id=b44 to="Login">Login/Sign in</router-link>
-    </v-flex>
-<!-- </v-layout> -->
-      <!-- En "v-spacer" fyller allt utrymme mellan två "object", det är lite lättare att använda dessa än det ni gjorde tidigare -->
-      <v-spacer/>
-      <v-app-bar-nav-icon to='/settings'><v-icon>mdi-settings</v-icon></v-app-bar-nav-icon>
-    </v-app-bar>
-    <img srv="./assets/logo.png"> <!-- Denna logga finns ej, inget texture -->
-
-    <v-navigation-drawer
+          
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" id=b47></v-app-bar-nav-icon>
+       <v-navigation-drawer 
       v-model="drawer"
-      app
+      absolute
+      temporary
     >
       <v-list dense>
-        <v-list-item @click.stop="left = !left">
-          <v-list-item-action>
-            <v-icon>mdi-exit-to-app</v-icon>
-          </v-list-item-action>
+        <v-list-item-title id=b48>Menu</v-list-item-title>
+
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          link
+          >
+          <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+  
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
+              </v-list>
+            </v-navigation-drawer>
+
+         </v-flex>
+         <v-flex xs12>
+      <v-toolbar-title>
+        <router-link id=b45 to="/">Snurrig.se</router-link>              <!-- genom att lägga router-links direkt under inkluderas de i snurrig.se-toolbaren--> 
+        </v-toolbar-title>                                               <!-- Dessa router links är "permanenta" och följer med vid sidbyte, rekommenderar att ta bort dem innan ni lämnar in uppgiften åtminstone -->
+      
+   </v-flex>
+      <v-flex xs12 offset-xs7>
+    <router-link class="right" id=b44 to="Login" >Login/Sign in</router-link>               <!-- v-flex och v-layout gör att vi kan flytta på login och snurrig.se med ex. justify center -->
+    </v-flex>
+     
+      <v-spacer/>                                                                                        <!-- En "v-spacer" fyller allt utrymme mellan två "object", det är lite lättare att använda dessa än det ni gjorde tidigare -->
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" to='/settings'><v-icon id=b46>mdi-settings</v-icon></v-app-bar-nav-icon>
+    </v-app-bar>
+    <img srv="./assets/logo.png">                                                                   <!-- Denna logga finns ej, inget texture -->
+
+   
+
+            <!-- <v-list-item @click.stop="drawer = !drawer">
+
           <v-list-item-content>
-            <v-list-item-title>Tom Drawer</v-list-item-title>
+             <router-link class="right" id=b49 to="Hallonrummet">Hallonrummet</router-link>
           </v-list-item-content>
         </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
 
-    <v-navigation-drawer
-      v-model="left"
-      fixed
-      temporary
-    ></v-navigation-drawer>
+        <v-list-item @click.stop="drawer = !drawer">
 
-         <!-- vad sker här?? -->
+          <v-list-item-content>
+             <router-link class="right" id=b49 to="Vardagsrummet">Vardagsrummet</router-link>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item @click.stop="drawer = !drawer">
+
+          <v-list-item-content>
+             <router-link class="right" id=b49 to="Pingisrummet">Pingisrummet</router-link>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item @click.stop="drawer = !drawer">
+
+          <v-list-item-content>
+             <router-link class="right" id=b49 to="Terrariet">Terrariet</router-link>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item @click.stop="drawer = !drawer">
+
+          <v-list-item-content>
+             <router-link class="right" id=b49 to="Klassrummet">Klassrummet</router-link>
+          </v-list-item-content>
+        </v-list-item> -->
+
+        
+  
+    
+         <!-- vad sker här??
     <v-content>
       <v-container
         class="fill-height"
@@ -86,21 +122,13 @@
     </v-content>
 
     <v-navigation-drawer
-      v-model="righ"
+      v-model="right"
       fixed
       right
       temporary
-    ></v-navigation-drawer>
+    ></v-navigation-drawer> -->
 
-   <v-footer
-      app
-      color="blue-grey"
-      class="white--text"
-    >
-      <span>Vuetify</span>
-      <div class="flex-grow-1"></div>
-      <span>&copy; 2019</span>
-    </v-footer>
+
   </v-app>
 </template>
 
@@ -113,20 +141,57 @@
       drawer: 0,
       left: false,
     }),
+    data() {
+          return {
+      drawer: null,
+      items: [
+        { title: 'Hallonrummet'},
+        { title: 'Terrariet'},
+        { title: 'Pingisrummet'},
+        { title: 'Klassrummet'},
+        { title: 'Vardagsrummet'},
+      ],
+    }
+    }
   }
 </script>
 
 <style>
+
 #b44{
-  font-size: 16px !important;
+  font-size: 18px !important;
   text-decoration: none;
   text-align: center;
-  color: white;
-
+  color: #616161;
+  font-family: "Arial";
 }
 #b45{
-  font-size: 22px;
+  font-size: 26px;
   text-decoration: none;
-  color: white;
+  color: #616161;
+  font-family: "Arial Black";
+}
+#b46{
+  font-size: 30px;
+  text-decoration: none;
+  color: #616161;
+}
+#b47{
+  font-size: 30px;
+  text-decoration: none;
+  color: #616161;
+}
+#b48{
+  font-size: 25px;
+  text-decoration: none;
+  color: #616161;
+}
+#b49{
+  font-size: 18px;
+  text-decoration: none;
+  color: #616161;
+}
+#b50{
+  color: #000000;
 }
 </style>

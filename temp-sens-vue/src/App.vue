@@ -2,15 +2,13 @@
   <div id="app">
     <router-view/>
     <Toolbar/>
-    <Footer/>
   </div>
 </template>
 
 <script>
 import Toolbar from './components/Toolbar'
-import Footer from './components/Footer'
 export default{
-  components: { Toolbar, Footer },
+  components: { Toolbar },
   name: 'app'
 }
 
