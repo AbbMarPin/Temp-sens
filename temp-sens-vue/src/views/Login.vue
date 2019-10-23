@@ -26,13 +26,11 @@
                   <template v-slot:activator="{ on }">
                   
                   </template>
-                 <span>Source</span>
                 </v-tooltip>
                 <v-tooltip right>
                   <template v-slot:activator="{ on }">
                     
                   </template>
-                  <span>Codepen</span>
                 </v-tooltip>
               </v-toolbar>
               <v-card-text>
@@ -41,6 +39,7 @@
                     label="Login"
                     name="login"
                     type="text"
+                    v-model="login"
                   ></v-text-field>
 
                   <v-text-field
@@ -48,12 +47,13 @@
                     label="Password"
                     name="password"
                     type="password"
+                    v-model="password"
                   ></v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions>
                 <div class="flex-grow-1"></div>
-                <v-btn color="primary">Login</v-btn>
+                <v-btn color="primary" @click="submit">Login</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -64,6 +64,10 @@
 </template>
 
 <script>
+// eslint-disable-next-line 
+const sha256 = require('js-sha256');
+// eslint-disable-next-line 
+const axios = require('axios');
   export default {
     props: {
       source: String,
@@ -71,5 +75,16 @@
     data: () => ({
       drawer: null,
     }),
+    methods: {
+      submit () {
+        // eslint-disable-next-line 
+        console.log("user " + this.login + "\npassword " + this.password);
+        // eslint-disable-next-line 
+        console.log("hashed password: " + sha256(this.password));
+        
+        
+    }
+    
+    },
   }
 </script>
