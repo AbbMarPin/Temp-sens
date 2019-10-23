@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "js-sha256": "^0.9.0",
     "material-components-web": "^3.2.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
