@@ -1,7 +1,10 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import Router from 'vue-router' //vvv ignorerar fel
+// eslint-disable-next-line 
 import Home from './views/Home.vue'
+// eslint-disable-next-line 
 import Login from './views/Login.vue'
+// eslint-disable-next-line 
 import Settingsingar from './views/Settingsingar.vue'
 import Vardagsrummet from './views/Diagram/Vardagsrummet.vue'
 import Pingisrummet from './views/Diagram/Pingisrummet.vue'
