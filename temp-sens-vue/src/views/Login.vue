@@ -16,44 +16,42 @@
           >
             <v-card class="elevation-12">
               <v-toolbar
-                color="primary"
+                color="white"
                 dark
                 flat
               >
-                <v-toolbar-title>Login form</v-toolbar-title>
+                <v-toolbar-title>Login</v-toolbar-title>
                 <div class="flex-grow-1"></div>
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on }">
                   
                   </template>
-                 <span>Source</span>
                 </v-tooltip>
                 <v-tooltip right>
                   <template v-slot:activator="{ on }">
                     
                   </template>
-                  <span>Codepen</span>
                 </v-tooltip>
               </v-toolbar>
               <v-card-text>
                 <v-form>
                   <v-text-field
-                    label="Login"
-                    name="login"
+                    label="Användarnamn"
+                    name="användarnamn"
                     type="text"
                   ></v-text-field>
 
                   <v-text-field
-                    id="password"
-                    label="Password"
-                    name="password"
+                    id="lösenord"
+                    label="Lösenord"
+                    name="lösenord"
                     type="password"
                   ></v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions>
                 <div class="flex-grow-1"></div>
-                <v-btn color="primary">Login</v-btn>
+                <v-btn color="light-blue">Login</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
