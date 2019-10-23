@@ -10,7 +10,7 @@
       >
        
       <v-list dense>
-        <v-list-item-title id=b48>Menu</v-list-item-title>
+        <v-list-item-title id=b50>Menu</v-list-item-title>
         <v-list-item id=b50
           v-for="item in items"
           :key="item.title"
@@ -37,35 +37,6 @@
        <v-flex xs2 ml1 mr2 
           
           class="pa-2">
-          
-      <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer" id=b47></v-app-bar-nav-icon>
-       <v-navigation-drawer 
-      v-model="drawer"
-      absolute
-      expand-on-hover
-      permanent
-      class="deep-purple accent-4"
-      dark
-      >
-      <v-list dense>
-        <v-list-item-title id=b48>Menu</v-list-item-title>
-
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          link
-          >
-          <v-list-item-icon>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-icon>
-  
-            <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-
-              </v-list>
-            </v-navigation-drawer> -->
 
          </v-flex>
          <v-flex xs12>
@@ -82,82 +53,6 @@
       <v-app-bar-nav-icon @click.stop="icon = !icon" to='/settings'><v-icon id=b46>mdi-settings</v-icon></v-app-bar-nav-icon>
     </v-app-bar>
     <img srv="./assets/logo.png">                                                                   <!-- Denna logga finns ej, inget texture -->
-
-   
-
-            <!-- <v-list-item @click.stop="drawer = !drawer">
-
-          <v-list-item-content>
-             <router-link class="right" id=b49 to="Hallonrummet">Hallonrummet</router-link>
-          </v-list-item-content>
-        </v-list-item>
-
-        <v-list-item @click.stop="drawer = !drawer">
-
-          <v-list-item-content>
-             <router-link class="right" id=b49 to="Vardagsrummet">Vardagsrummet</router-link>
-          </v-list-item-content>
-        </v-list-item>
-
-        <v-list-item @click.stop="drawer = !drawer">
-
-          <v-list-item-content>
-             <router-link class="right" id=b49 to="Pingisrummet">Pingisrummet</router-link>
-          </v-list-item-content>
-        </v-list-item>
-
-        <v-list-item @click.stop="drawer = !drawer">
-
-          <v-list-item-content>
-             <router-link class="right" id=b49 to="Terrariet">Terrariet</router-link>
-          </v-list-item-content>
-        </v-list-item>
-
-        <v-list-item @click.stop="drawer = !drawer">
-
-          <v-list-item-content>
-             <router-link class="right" id=b49 to="Klassrummet">Klassrummet</router-link>
-          </v-list-item-content>
-        </v-list-item> -->
-
-        
-  
-    
-         <!-- vad sker här??
-    <v-content>
-      <v-container
-        class="fill-height"
-        fluid
-      >
-        <v-row
-          justify="center"
-          align="center"
-        >
-          <v-col class="shrink">
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-            
-              </template>
-             
-            </v-tooltip>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-               
-              </template>
-              
-            </v-tooltip>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-content>
-
-    <v-navigation-drawer
-      v-model="right"
-      fixed
-      right
-      temporary
-    ></v-navigation-drawer> -->
-   
 
 
   </v-app>
@@ -176,15 +71,17 @@
           return {
       drawer: null,
       items: [
-        { title: 'Hallonrummet'},
+        // { title: <router-link to="Hallonrummet">Hallonrummet</router-link>}
         { title: 'Terrariet'},
         { title: 'Pingisrummet'},
         { title: 'Klassrummet'},
         { title: 'Vardagsrummet'},
       ],
-    }
+    
     }
   }
+ }
+
 </script>
 
 <style>
@@ -210,34 +107,38 @@
 #b47{
   font-size: 30px;
   text-decoration: none;
-  color: #616161;
+  color: #D1D1D1FF;
 }
-#b48{
+/* #b48{
   font-size: 25px;
   text-decoration: none;
-  color: #616161;
+  color: #ffffff;
   top: 50% ;
   left: 50% ;
 
-}
+} */
 #b49{
   font-size: 18px;
   text-decoration: none;
-  color: #616161;
+  color: rgb(255, 253, 253);
 }
 #b50{
    font-size: 25px;
   text-decoration: none;
-  color: #616161;
+  color: #D1D1D1FF;
   font-family: "Arial";
   top: 10% ;
   left: -15% ;
 
 }
 #navpic{
-  background-image: url("https://cdn.pixabay.com/photo/2018/08/19/10/16/nature-3616194_960_720.jpg");
+  background-image: url("https://i.pinimg.com/originals/db/1d/88/db1d88de2d554388ce3c1ff7707f5e48.jpg");
+  filter: brightness(50%);
   max-width: 15%;
   margin-top: 0,5em;
+  font-size: 25px;
+  color: #ffffff !important;
+  
 }
 
 </style>
