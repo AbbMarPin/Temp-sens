@@ -14,13 +14,14 @@
         <v-list-item id=b50
           v-for="item in items"
           :key="item.title"
+          router :to="item.route"
           link
           >
           <v-list-item-icon>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title href="Login" >{{ item.title }}</v-list-item-title>
+              <v-list-item-title > <router-link >{{ item.title }}</router-link>{{ item.title }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
               </v-list>
@@ -68,10 +69,11 @@
       drawer: null, 
       items: [
         // <router-link to="Hallonrummet">Hallonrummet</router-link>
-        { title: 'Terrariet'},
-        { title: 'Pingisrummet'},
-        { title: 'Klassrummet'},
-        { title: 'Vardagsrummet'},
+        { title: 'Terrariet', route: '/Terrariet'},
+        { title: 'Pingisrummet', route: '/Pingisrummet'},
+        { title: 'Klassrummet', route: '/Klassrummet'},
+        { title: 'Vardagsrummet', route: '/Vardagsrummet'},
+        { title: 'Hallonsrummet', route: '/Hallonsrummet'},
       ],
     }),  
  }
