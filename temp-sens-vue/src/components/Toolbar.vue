@@ -1,6 +1,33 @@
 <template>
   <v-app id="inspire">
+       <v-navigation-drawer 
+      v-model="drawer"
+      app
+      expand-on-hover
+      permanent
+      id="navpic"
+      
+      >
+       
+      <v-list dense>
+        <v-list-item-title id=b48>Menu</v-list-item-title>
+        <v-list-item id=b50
+          v-for="item in items"
+          :key="item.title"
+          link
+          >
+          <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+  
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+              </v-list>
+            </v-navigation-drawer>
 
+    
    <v-app-bar
       app
       clipped-right
@@ -11,7 +38,7 @@
           
           class="pa-2">
           
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" id=b47></v-app-bar-nav-icon>
+      <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer" id=b47></v-app-bar-nav-icon>
        <v-navigation-drawer 
       v-model="drawer"
       absolute
@@ -38,7 +65,7 @@
           </v-list-item>
 
               </v-list>
-            </v-navigation-drawer>
+            </v-navigation-drawer> -->
 
          </v-flex>
          <v-flex xs12>
@@ -130,6 +157,7 @@
       right
       temporary
     ></v-navigation-drawer> -->
+   
 
 
   </v-app>
@@ -188,6 +216,9 @@
   font-size: 25px;
   text-decoration: none;
   color: #616161;
+  top: 50% ;
+  left: 50% ;
+
 }
 #b49{
   font-size: 18px;
@@ -195,6 +226,18 @@
   color: #616161;
 }
 #b50{
-  color: #000000;
+   font-size: 25px;
+  text-decoration: none;
+  color: #616161;
+  font-family: "Arial";
+  top: 10% ;
+  left: -15% ;
+
 }
+#navpic{
+  background-image: url("https://cdn.pixabay.com/photo/2018/08/19/10/16/nature-3616194_960_720.jpg");
+  max-width: 15%;
+  margin-top: 0,5em;
+}
+
 </style>
