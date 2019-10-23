@@ -14,50 +14,48 @@
             sm="8"
             md="4"
           >
-            <v-card class="elevation-12">
+            <v-card class="elevation-3">
               <v-toolbar
-                color="white"
+                color="primary"
                 dark
                 flat
               >
-                <v-toolbar-title>Login</v-toolbar-title>
+                <v-toolbar-title>Login form</v-toolbar-title>
                 <div class="flex-grow-1"></div>
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on }">
-                  
                   </template>
                 </v-tooltip>
                 <v-tooltip right>
                   <template v-slot:activator="{ on }">
-                    
                   </template>
                 </v-tooltip>
               </v-toolbar>
               <v-card-text>
                 <v-form>
                   <v-text-field
-                    label="Användarnamn"
-                    name="användarnamn"
+                    label="Login"
+                    name="login"
                     type="text"
                     v-model="login"
+                    :rules="loginRules"
+                    required
                   ></v-text-field>
 
                   <v-text-field
-                    id="lösenord"
-                    label="Lösenord"
-                    name="lösenord"
+                    id="password"
+                    label="Password"
+                    name="password"
                     type="password"
                     v-model="password"
+                    :rules="passwordRules"
+                    required
                   ></v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions>
                 <div class="flex-grow-1"></div>
-<<<<<<< HEAD
                 <v-btn color="primary" @click="submit">Login</v-btn>
-=======
-                <v-btn color="light-blue">Login</v-btn>
->>>>>>> master
               </v-card-actions>
             </v-card>
           </v-col>
@@ -78,9 +76,23 @@ const axios = require('axios');
     },
     data: () => ({
       drawer: null,
+      login: '',
+      loginRules: [
+        v => !!v || 'Userame is required',
+      ],
+        password: '',
+      passwordRules: [
+        v => !!v || 'A password is required',
+        v => (v && v.length >= 8) || 'Password is too short!'
+      ]
     }),
     methods: {
-      submit () {
+        
+      submit () {// ToDo user gets an id on reg that gets stored in the db next to pass. 
+      // user needs an id to remove their devices
+      // lambda checks in database if user and pass hash matches and sends back an id
+      // vuex keeps the id
+       
         // eslint-disable-next-line 
         console.log("user " + this.login + "\npassword " + this.password);
         // eslint-disable-next-line 
@@ -92,3 +104,7 @@ const axios = require('axios');
     },
   }
 </script>
+
+<style>
+
+</style>

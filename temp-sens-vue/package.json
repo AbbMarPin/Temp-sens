@@ -13,6 +13,7 @@
     "js-sha256": "^0.9.0",
     "material-components-web": "^3.2.0",
     "vue": "^2.6.10",
+    "vue-imagefill": "^0.2.1",
     "vue-router": "^3.0.3",
     "vuetify": "^2.0.0",
     "vuex": "^3.0.1"

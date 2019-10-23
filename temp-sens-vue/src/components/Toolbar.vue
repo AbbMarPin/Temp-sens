@@ -6,6 +6,7 @@
       expand-on-hover
       permanent
       id="navpic"
+      v-if="hideDrawer = 1"
       
       >
        
@@ -21,7 +22,7 @@
             </v-list-item-icon>
   
             <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
+              <v-list-item-title href="Login" >{{ item.title }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
               </v-list>
@@ -32,7 +33,8 @@
       app
       clipped-right
       color="white"
-      dark
+      darks  
+      
     >
        <v-flex xs2 ml1 mr2 
           
@@ -46,11 +48,11 @@
       
    </v-flex>
       <v-flex xs12 offset-xs7>
-    <router-link class="right" id=b44 to="Login" >Login/Sign in</router-link>               <!-- v-flex och v-layout gör att vi kan flytta på login och snurrig.se med ex. justify center -->
+    <router-link class="right"  id=b44 to="Login" >Login/Sign in</router-link>               <!-- v-flex och v-layout gör att vi kan flytta på login och snurrig.se med ex. justify center -->
     </v-flex>
      
       <v-spacer/>                                                                                        <!-- En "v-spacer" fyller allt utrymme mellan två "object", det är lite lättare att använda dessa än det ni gjorde tidigare -->
-      <v-app-bar-nav-icon @click.stop="icon = !icon" to='/settings'><v-icon id=b46>mdi-settings</v-icon></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click.stop="icon = !icon" to="Settings"><v-icon id=b46>mdi-settings</v-icon></v-app-bar-nav-icon>
     </v-app-bar>
     <img srv="./assets/logo.png">                                                                   <!-- Denna logga finns ej, inget texture -->
 
@@ -66,20 +68,15 @@
     data: () => ({
       drawer: 0,
       left: false,
-    }),
-    data() {
-          return {
       drawer: null,
       items: [
-        // { title: <router-link to="Hallonrummet">Hallonrummet</router-link>}
+        // <router-link to="Hallonrummet">Hallonrummet</router-link>
         { title: 'Terrariet'},
         { title: 'Pingisrummet'},
         { title: 'Klassrummet'},
         { title: 'Vardagsrummet'},
       ],
-    
-    }
-  }
+    }),  
  }
 
 </script>
@@ -132,13 +129,12 @@
 
 }
 #navpic{
-  background-image: url("https://i.pinimg.com/originals/db/1d/88/db1d88de2d554388ce3c1ff7707f5e48.jpg");
+  background-image: url("https://raw.githubusercontent.com/AbbMarPin/Temp-sens/master/Bilder/Untitled2.png");
   filter: brightness(50%);
   max-width: 15%;
   margin-top: 0,5em;
   font-size: 25px;
   color: #ffffff !important;
-  
 }
 
 </style>

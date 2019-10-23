@@ -6,10 +6,15 @@ import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 // eslint-disable-next-line 
 import Settingsingar from './views/Settingsingar.vue'
+// eslint-disable-next-line 
 import Vardagsrummet from './views/Diagram/Vardagsrummet.vue'
+// eslint-disable-next-line 
 import Pingisrummet from './views/Diagram/Pingisrummet.vue'
+// eslint-disable-next-line 
 import Terrariet from './views/Diagram/Terrariet.vue'
+// eslint-disable-next-line 
 import Klassrummet from './views/Diagram/Klassrummet.vue'
+// eslint-disable-next-line 
 import Hallonrummet from './views/Diagram/Hallonrummet.vue'
 
 Vue.use(Router)
