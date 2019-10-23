@@ -15,7 +15,8 @@
        <v-navigation-drawer 
       v-model="drawer"
       absolute
-      temporary
+      expand-on-hover
+      permanent
       class="deep-purple accent-4"
       dark
       >
