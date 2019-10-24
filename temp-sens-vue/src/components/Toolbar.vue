@@ -1,15 +1,14 @@
 <template>
-  <v-app id="inspire">
+  <v-app id="inspire" v-if="hideToolbar = 1">
        <v-navigation-drawer 
       v-model="drawer"
       app
       expand-on-hover
       permanent
       id="navpic"
-      v-if="hideDrawer = 1"
-      
-      >
-       
+      v-if= 1                   
+      >                                             
+                                                        <!-- fråga jocke -->
       <v-list dense>
         <v-list-item-title id=b50>Menu</v-list-item-title>
         <v-list-item id=b50
@@ -21,7 +20,6 @@
           <v-list-item-icon>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-icon>
-  
             <v-list-item-content>
               <v-list-item-title > <router-link >{{ item.title }}</router-link>{{ item.title }}</v-list-item-title>  
             </v-list-item-content> <!-- ^^^ link and title in same title ^^^ --> 
@@ -29,7 +27,6 @@
               </v-list>
             </v-navigation-drawer>
 
-    
    <v-app-bar
       app
       clipped-right
@@ -49,7 +46,7 @@
       
    </v-flex>
       <v-flex xs12 offset-xs7>
-    <router-link class="right"  id=b44 to="Login" >Login/Sign in</router-link>               <!-- v-flex och v-layout gör att vi kan flytta på login och snurrig.se med ex. justify center -->
+    <router-link class="right" id=b44 to="Login" >Login/Sign in</router-link>               <!-- v-flex och v-layout gör att vi kan flytta på login och snurrig.se med ex. justify center -->
     </v-flex>
      
       <v-spacer/>                                                                                        <!-- En "v-spacer" fyller allt utrymme mellan två "object", det är lite lättare att använda dessa än det ni gjorde tidigare -->
@@ -69,7 +66,7 @@
     data: () => ({
       drawer: 0,
       left: false,
-      drawer: null,
+      drawer: null, 
       items: [
         // <router-link to="Hallonrummet">Hallonrummet</router-link>
         { title: 'Terrariet', route: '/Terrariet'}, // routes to em
