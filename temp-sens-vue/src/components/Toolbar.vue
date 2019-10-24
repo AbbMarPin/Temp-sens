@@ -1,12 +1,12 @@
 <template>
   <v-app id="inspire" v-if="hideToolbar = 1">
        <v-navigation-drawer 
-      v-model="drawer"
+      v-model= "myDrawer" 
       app
       expand-on-hover
       permanent
       id="navpic"
-      v-if= 1                   
+      v-if= 1
       >                                             
                                                         <!-- fråga jocke -->
       <v-list dense>
@@ -46,7 +46,11 @@
       
    </v-flex>
       <v-flex xs12 offset-xs7>
-    <router-link class="right" id=b44 to="Login" >Login/Sign in</router-link>               <!-- v-flex och v-layout gör att vi kan flytta på login och snurrig.se med ex. justify center -->
+    <router-link class="right"
+     id=b44
+     to="Login"
+     >Logout
+     </router-link>               <!-- v-flex och v-layout gör att vi kan flytta på login och snurrig.se med ex. justify center -->
     </v-flex>
      
       <v-spacer/>                                                                                        <!-- En "v-spacer" fyller allt utrymme mellan två "object", det är lite lättare att använda dessa än det ni gjorde tidigare -->
@@ -65,8 +69,8 @@
     },
     data: () => ({
       drawer: 0,
-      left: false,
-      drawer: null, 
+      left: false, 
+      width: 0,
       items: [
         // <router-link to="Hallonrummet">Hallonrummet</router-link>
         { title: 'Terrariet', route: '/Terrariet'},
