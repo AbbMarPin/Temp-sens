@@ -23,8 +23,8 @@
             </v-list-item-icon>
   
             <v-list-item-content>
-              <v-list-item-title > <router-link >{{ item.title }}</router-link>{{ item.title }}</v-list-item-title>
-            </v-list-item-content>
+              <v-list-item-title > <router-link >{{ item.title }}</router-link>{{ item.title }}</v-list-item-title>  
+            </v-list-item-content> <!-- ^^^ link and title in same title ^^^ --> 
           </v-list-item>
               </v-list>
             </v-navigation-drawer>
@@ -72,10 +72,10 @@
       drawer: null,
       items: [
         // <router-link to="Hallonrummet">Hallonrummet</router-link>
-        { title: 'Terrariet', route: '/Terrariet'},
+        { title: 'Terrariet', route: '/Terrariet'}, // routes to em
         { title: 'Pingisrummet', route: '/Pingisrummet'},
         { title: 'Klassrummet', route: '/Klassrummet'},
-        { title: 'Vardagsrummet', route: '/Vardagsrummet'},
+        { title: 'Vardagsrummet', route: '/Vardagsrummet'}, 
         { title: 'Hallonsrummet', route: '/Hallonsrummet'},
       ],
     }),  
