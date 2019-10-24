@@ -75,7 +75,7 @@ const axios = require('axios');
       source: String,
     },
     data: () => ({
-      drawer: null,
+      drawer: 0,
       login: '',
       loginRules: [
         v => !!v || 'Userame is required',
