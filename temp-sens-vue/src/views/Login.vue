@@ -14,44 +14,48 @@
             sm="8"
             md="4"
           >
-            <v-card class="elevation-12">
+            <v-card class="elevation-3">
               <v-toolbar
-                color="white"
+                color="primary"
                 dark
                 flat
               >
-                <v-toolbar-title>Login</v-toolbar-title>
+                <v-toolbar-title>Login form</v-toolbar-title>
                 <div class="flex-grow-1"></div>
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on }">
-                  
                   </template>
                 </v-tooltip>
                 <v-tooltip right>
                   <template v-slot:activator="{ on }">
-                    
                   </template>
                 </v-tooltip>
               </v-toolbar>
               <v-card-text>
                 <v-form>
                   <v-text-field
-                    label="Användarnamn"
-                    name="användarnamn"
+                    label="Login"
+                    name="login"
                     type="text"
+                    v-model="login"
+                    :rules="loginRules"
+                    required
                   ></v-text-field>
 
                   <v-text-field
-                    id="lösenord"
-                    label="Lösenord"
-                    name="lösenord"
+                    id="password"
+                    label="Password"
+                    name="password"
                     type="password"
+                    v-model="password"
+                    :rules="passwordRules"
+                    required
                   ></v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions>
                 <div class="flex-grow-1"></div>
-                <v-btn color="light-blue">Login</v-btn>
+                <v-btn color="primary" @click="submit">Login</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -62,12 +66,76 @@
 </template>
 
 <script>
+// eslint-disable-next-line 
+const sha256 = require('js-sha256');
+// eslint-disable-next-line 
+const axios = require('axios');
   export default {
     props: {
       source: String,
     },
     data: () => ({
-      drawer: null,
+      drawer: 0,
+      login: '',
+      loginRules: [
+        v => !!v || 'Userame is required',
+      ],
+        password: '',
+      passwordRules: [
+        v => !!v || 'A password is required',
+        v => (v && v.length >= 8) || 'Password is too short!'
+      ]
     }),
+    methods: {
+        
+      submit () {// ToDo user gets an id on reg that gets stored in the db next to pass. 
+      // user needs an id to remove their devices
+      // lambda checks in database if user and pass hash matches and sends back an id
+      // vuex keeps the id
+let body ={ user: "admin", pass:"f75778f7425be4db0369d09af37a6c2b9a83dea0e53e7bd57412e4b060e607f7"};
+let stringbody= JSON.stringify(body);
+axios.post('https://ec4avk1xoh.execute-api.us-east-1.amazonaws.com/v1/',
+stringbody
+        // {
+    //        headers: {
+    //     'Content-Type': 'application/json',
+    //      "Access-Control-Allow-Origin": "*"
+    // },
+      // stringbody
+        // }
+  //       data: {
+  //         // "Content-Type" : 'text/plain',
+  //         // "User-Agent" : 'PostmanRuntime/7.19.0',
+  //         // "Accept" : '*/*',
+  //         // "Cache-Control" : 'no-cache',
+  //         // "Postman-Token" : '1b00ccea-605c-484a-adf6-c6209418a590',
+  //         // "Host" : 'ec4avk1xoh.execute-api.us-east-1.amazonaws.com',
+  //         // "Accept-Encoding" : 'gzip, deflate',
+  //         // "Content-Length" : '99',
+  //         // "Connetion" : 'keep-alive',
+  // }
+
+  // }
+  )
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+        // eslint-disable-next-line 
+        console.log("user " + this.login + "\npassword " + this.password);
+        // eslint-disable-next-line 
+        console.log("hashed password: " + sha256(this.password));
+        
+        
+    }
+    
+    },
   }
 </script>
+
+<style>
+
+</style>

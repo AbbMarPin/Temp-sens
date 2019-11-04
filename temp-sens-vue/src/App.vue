@@ -17,36 +17,27 @@
      
       </div>
     </v-content>
-  <!-- <div id="app">
+<div id="app">
     <router-view/>
     <Toolbar/>
-<<<<<<< Updated upstream
     <Footer/>
   </div>
-=======
-  </div> -->
+  </div>
   
->>>>>>> Stashed changes
 </template>
 
 <script>
 import GetDevices from './components/GetDevices'
 import Enchart from './components/Enchart'
 import Toolbar from './components/Toolbar'
-import Footer from './components/Footer'
 export default{
-<<<<<<< Updated upstream
-  components: { Toolbar, Footer },
-  name: 'app'
-=======
   name: 'app',
-  components: { Toolbar, GetDevices, Enchart },
+  components: { Toolbar, Footer, GetDevices, Enchart },
     data () {
     return {
       addnew:false,
     }
   }
->>>>>>> Stashed changes
 }
 
 </script>
