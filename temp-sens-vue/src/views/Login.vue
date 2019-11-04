@@ -61,12 +61,13 @@
               <v-card-actions>
                 <div class="flex-grow-1"></div>
                 <v-flex xs12>
-                <router-link to="/" tag="button" 
+                <v-btn
+                color= #00B8D4
                 block 
                 id=a5
                 tile 
                 @click="submit"
-                >LOGGA IN</router-link>
+                >LOGGA IN</v-btn>
                 </v-flex>
 
               </v-card-actions>
