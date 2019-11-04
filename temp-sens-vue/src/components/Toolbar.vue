@@ -111,11 +111,6 @@
     },
     data: () => ({
       drawer: 0,
-<<<<<<< Updated upstream
-      left: false,
-    }),
-  }
-=======
       left: false, 
       width: 0,
       items: [
@@ -129,7 +124,6 @@
     }),  
  }
 
->>>>>>> Stashed changes
 </script>
 
 <style>

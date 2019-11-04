@@ -8,19 +8,13 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-<<<<<<< Updated upstream
-=======
     "axios": "^0.19.0",
     "chart.js": "^2.9.2",
->>>>>>> Stashed changes
     "core-js": "^2.6.5",
     "material-components-web": "^3.2.0",
     "vue": "^2.6.10",
-<<<<<<< Updated upstream
-=======
     "vue-chartjs": "^3.5.0",
     "vue-imagefill": "^0.2.1",
->>>>>>> Stashed changes
     "vue-router": "^3.0.3",
     "vuetify": "^2.0.0",
     "vuex": "^3.0.1"
