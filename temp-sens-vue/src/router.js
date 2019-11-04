@@ -1,6 +1,13 @@
 import Vue from 'vue'
+<<<<<<< Updated upstream
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+=======
+import Router from 'vue-router' //vvv ignorerar fel
+// eslint-disable-next-line 
+// import Home from './views/Home.vue'
+// eslint-disable-next-line 
+>>>>>>> Stashed changes
 import Login from './views/Login.vue'
 import Settingsingar from './views/Settingsingar.vue'
 

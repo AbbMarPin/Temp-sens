@@ -111,9 +111,25 @@
     },
     data: () => ({
       drawer: 0,
+<<<<<<< Updated upstream
       left: false,
     }),
   }
+=======
+      left: false, 
+      width: 0,
+      items: [
+        // <router-link to="Hallonrummet">Hallonrummet</router-link>
+        { title: 'Terrariet', route: '/Terrariet'}, // routes to em
+        { title: 'Pingisrummet', route: '/Pingisrummet'},
+        { title: 'Klassrummet', route: '/Klassrummet'},
+        { title: 'Vardagsrummet', route: '/Vardagsrummet'}, 
+        { title: 'Hallonrummet', route: '/Hallonrummet'},
+      ],
+    }),  
+ }
+
+>>>>>>> Stashed changes
 </script>
 
 <style>
