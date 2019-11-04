@@ -6,7 +6,6 @@
       expand-on-hover
       permanent
       id="navpic"
-      v-if= 1
       >                                             
                                                         <!-- fråga jocke -->
       <v-list dense>
