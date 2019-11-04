@@ -17,12 +17,6 @@
      
       </div>
     </v-content>
-<div id="app">
-    <router-view/>
-    <Toolbar/>
-    <Footer/>
-  </div>
-  </div>
   
 </template>
 
