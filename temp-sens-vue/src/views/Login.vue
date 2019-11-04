@@ -92,7 +92,38 @@ const axios = require('axios');
       // user needs an id to remove their devices
       // lambda checks in database if user and pass hash matches and sends back an id
       // vuex keeps the id
-       
+let body ={ user: "admin", pass:"f75778f7425be4db0369d09af37a6c2b9a83dea0e53e7bd57412e4b060e607f7"};
+let stringbody= JSON.stringify(body);
+axios.post('https://ec4avk1xoh.execute-api.us-east-1.amazonaws.com/v1/',
+stringbody
+        // {
+    //        headers: {
+    //     'Content-Type': 'application/json',
+    //      "Access-Control-Allow-Origin": "*"
+    // },
+      // stringbody
+        // }
+  //       data: {
+  //         // "Content-Type" : 'text/plain',
+  //         // "User-Agent" : 'PostmanRuntime/7.19.0',
+  //         // "Accept" : '*/*',
+  //         // "Cache-Control" : 'no-cache',
+  //         // "Postman-Token" : '1b00ccea-605c-484a-adf6-c6209418a590',
+  //         // "Host" : 'ec4avk1xoh.execute-api.us-east-1.amazonaws.com',
+  //         // "Accept-Encoding" : 'gzip, deflate',
+  //         // "Content-Length" : '99',
+  //         // "Connetion" : 'keep-alive',
+  // }
+
+  // }
+  )
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
         // eslint-disable-next-line 
         console.log("user " + this.login + "\npassword " + this.password);
         // eslint-disable-next-line 
