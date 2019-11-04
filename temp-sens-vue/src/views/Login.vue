@@ -106,11 +106,21 @@ const axios = require('axios');
       // user needs an id to remove their devices
       // lambda checks in database if user and pass hash matches and sends back an id
       // vuex keeps the id
-       
-        // eslint-disable-next-line 
-        console.log("user " + this.login + "\npassword " + this.password);
-        // eslint-disable-next-line 
-        console.log("hashed password: " + sha256(this.password));
+    let body = { user : this.login, pass : sha256(this.password)};
+    let stringbody= JSON.stringify(body);
+    console.log(stringbody)
+    axios.post('https://ec4avk1xoh.execute-api.us-east-1.amazonaws.com/v1/', stringbody)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+    // eslint-disable-next-line 
+    console.log("user " + this.login + "\npassword " + this.password);
+    // eslint-disable-next-line 
+    console.log("hashed password: " + sha256(this.password));
         
         
     }
