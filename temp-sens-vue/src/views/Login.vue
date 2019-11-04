@@ -1,26 +1,25 @@
 <template>
-  <v-app id="inspire">
-    <v-content>
+  <v-app id=background>
       <v-container
         class="fill-height"
         fluid
       >
-        <v-row
-          align="center"
-          justify="center"
-        >
+        <v-row>
           <v-col
             cols="12"
             sm="8"
             md="4"
           >
-            <v-card class="elevation-3">
-              <v-toolbar
-                color="primary"
-                dark
-                flat
-              >
-                <v-toolbar-title>Login form</v-toolbar-title>
+            <v-card 
+             max-width="450"
+             tile
+             justify-center
+             align-center
+             class-mx-auto
+             id=a6
+             
+            >
+                <v-text id=a3 >LOGGA IN</v-text>
                 <div class="flex-grow-1"></div>
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on }">
@@ -30,7 +29,7 @@
                   <template v-slot:activator="{ on }">
                   </template>
                 </v-tooltip>
-              </v-toolbar>
+              
               <v-card-text>
                 <v-form>
                   <v-text-field
@@ -40,6 +39,9 @@
                     v-model="login"
                     :rules="loginRules"
                     required
+                    persistent-hint
+                    outlined
+                    color= "white"
                   ></v-text-field>
 
                   <v-text-field
@@ -50,18 +52,30 @@
                     v-model="password"
                     :rules="passwordRules"
                     required
+                    persistent-hint
+                    outlined
+                    color= "white"
                   ></v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions>
                 <div class="flex-grow-1"></div>
-                <v-btn color="primary" @click="submit">Login</v-btn>
+                <v-flex xs12>
+                <router-link to="/" tag="button" 
+                block 
+                id=a5
+                tile 
+                @click="submit"
+                >LOGGA IN</router-link>
+                </v-flex>
+
               </v-card-actions>
+              <v-text id=a4 >Har du inget konto? Registrera dig </v-text>
+               <router-link to="/Bli_Medlem">HÄR</router-link>
             </v-card>
           </v-col>
         </v-row>
       </v-container>
-    </v-content>
   </v-app>
 </template>
 
@@ -106,5 +120,35 @@ const axios = require('axios');
 </script>
 
 <style>
+
+#background{
+  background-image: url('https://newevolutiondesigns.com/images/freebies/winter-wallpaper-23.jpg');
+  filter: brightness(50%);
+  image-rendering: crisp-edges;
+  background-size: cover;
+} 
+
+#a2{
+  color: #000;
+}
+
+#a3{
+  color: #00B8D4;
+  font-size: 32px;
+  text-align: center;
+}
+
+#a4{
+  color: #FAFAFA;
+  text-align: center;
+}
+
+#a5{
+  color: #FAFAFA;
+}
+
+#a6{
+  background: rgba(0,0,0,0.7);
+}
 
 </style>

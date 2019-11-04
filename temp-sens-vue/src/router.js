@@ -23,11 +23,7 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'Home',
-    //   component: () => import('./views/Startsida.vue')
-    // },
+
     {
       path: '/Login',
       name: 'Login',

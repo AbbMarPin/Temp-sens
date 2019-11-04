@@ -1,14 +1,12 @@
 <template>
   <v-app id="inspire" v-if="hideToolbar = 1">
-       <v-navigation-drawer 
+       <v-navigation-drawer v-if="['Login'].indexOf($route.name) === -1"
       v-model= "myDrawer" 
-      app
       expand-on-hover
-      permanent
+      floating
+      hide-overlay
       id="navpic"
-      v-if= 1
       >                                             
-                                                        <!-- fråga jocke -->
       <v-list dense>
         <v-list-item-title id=b50>Menu</v-list-item-title>
         <v-list-item id=b50
@@ -31,25 +29,23 @@
       app
       clipped-right
       color="white"
-      darks  
-      
+      darks 
     >
        <v-flex xs2 ml1 mr2 
           
           class="pa-2">
 
          </v-flex>
-         <v-flex xs12>
+         <v-flex xs3>
       <v-toolbar-title>
         <router-link id=b45 to="/">Snurrig.se</router-link>              <!-- genom att lägga router-links direkt under inkluderas de i snurrig.se-toolbaren--> 
         </v-toolbar-title>                                               <!-- Dessa router links är "permanenta" och följer med vid sidbyte, rekommenderar att ta bort dem innan ni lämnar in uppgiften åtminstone -->
-      
-   </v-flex>
+      </v-flex>
       <v-flex xs12 offset-xs7>
     <router-link class="right"
      id=b44
      to="Login"
-     >Logout
+     >Logga in / Bli medlem
      </router-link>               <!-- v-flex och v-layout gör att vi kan flytta på login och snurrig.se med ex. justify center -->
     </v-flex>
      
@@ -109,14 +105,6 @@
   text-decoration: none;
   color: #D1D1D1FF;
 }
-/* #b48{
-  font-size: 25px;
-  text-decoration: none;
-  color: #ffffff;
-  top: 50% ;
-  left: 50% ;
-
-} */
 #b49{
   font-size: 18px;
   text-decoration: none;
