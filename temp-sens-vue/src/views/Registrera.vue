@@ -16,7 +16,7 @@
              id=a6
              
             >
-                <v-text id=a3 >Logga in</v-text>
+                <v-text id=a3 >Registrera</v-text>
                 <div class="flex-grow-1"></div>
                 <v-tooltip bottom>
                   <template v-slot:activator="{ on }">
@@ -63,68 +63,18 @@
                 id=a5
                 tile 
                 @click="submit"
-                >Logga In
+                >Registrera
                 </v-btn>
 
               </v-card-actions>
-              <v-text id=a4 >Har du inget konto? Registrera dig </v-text>
-               <router-link to="/Registrera">Här</router-link>
+              <v-text id=a4 >Har du redan ett konto? Logga in </v-text>
+               <router-link to="/Login">Här</router-link>
             </v-card>
           </v-flex>
         </v-row>
       </v-container>
   </v-app>
 </template>
-
-<script>
-// eslint-disable-next-line 
-const sha256 = require('js-sha256');
-// eslint-disable-next-line 
-const axios = require('axios');
-  export default {
-    props: {
-      source: String,
-    },
-    data: () => ({
-      drawer: 0,
-      login: '',
-      loginRules: [
-        v => !!v || 'Userame is required',
-      ],
-        password: '',
-      passwordRules: [
-        v => !!v || 'A password is required',
-        v => (v && v.length >= 8) || 'Password is too short!'
-      ]
-    }),
-    methods: {
-        
-      submit () {// ToDo user gets an id on reg that gets stored in the db next to pass. 
-      // user needs an id to remove their devices
-      // lambda checks in database if user and pass hash matches and sends back an id
-      // vuex keeps the id
-    let body = { user : this.login, pass : sha256(this.password)};
-    let stringbody= JSON.stringify(body);
-    console.log(stringbody)
-    axios.post('https://ec4avk1xoh.execute-api.us-east-1.amazonaws.com/v1/', stringbody)
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-
-    // eslint-disable-next-line 
-    console.log("user " + this.login + "\npassword " + this.password);
-    // eslint-disable-next-line 
-    console.log("hashed password: " + sha256(this.password));
-        
-        
-    }
-    
-    },
-  }
-</script>
 
 <style>
 
