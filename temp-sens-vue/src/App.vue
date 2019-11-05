@@ -7,9 +7,15 @@
 
 <script>
 import Toolbar from './components/Toolbar'
+// import tempChartData from './views/temp-chart/tempChart-data.js'
 export default{
   components: { Toolbar },
-  name: 'app'
+  name: 'app',
+  data() {
+    return {
+      tempChartData: tempChartData,
+    }
+  }
 }
 
 </script>

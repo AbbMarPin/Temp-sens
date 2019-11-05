@@ -42,9 +42,10 @@
                   <v-text-field
                     label="Lösenord"
                     name="Lösenord"
-                    type="Lösenord"
+                    type="password"
                     v-model="password"
                     :rules="passwordRules"
+                    
                     required
                     outlined
                     dark

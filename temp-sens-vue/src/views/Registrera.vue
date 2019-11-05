@@ -1,3 +1,4 @@
+
 <template>
   <v-app id=background>
       <v-container bg fill-height grid-list-md text-xs-center>
@@ -44,7 +45,7 @@
                     id="Lösenord"
                     label="Lösenord"
                     name="Lösenord"
-                    type="Lösenord"
+                    type="password"
                     v-model="password"
                     :rules="passwordRules"
                     required
@@ -52,7 +53,7 @@
                     dark
                   ></v-text-field>
                   <v-text-field
-                    type="Lösenord"
+                    type="password"
                     label="Bekräfta lösenord"
                     name="Bekräfta lösenord"
                     v-model="password2"
@@ -86,10 +87,12 @@
 
 <script>
 export default {
-    data: () => ({
+   data: () => ({
       drawer: 0,
+      // password:"",
       login: '',
       loginRules: [
+        v => !!v || 'Ett Användarnamn krävs!',
         v => (v && v.length >= 6) || 'Användarnamn är för kort!',
       ],
         password: '',
@@ -99,12 +102,22 @@ export default {
       ],
         password2: '',
       passwordRules2: [
-        // v => !!v || 'Samma lösenord krävs!',
-        v => (!!v && v) !== this.password || 'Lösenordet stämmer inte överens',
+        v => !!v || 'Samma lösenord krävs!',
+        // v => (!!v && v) === this.password || 'Lösenordet stämmer inte överens',
         // v => (v && v.length >= 8) || 'Lösenordet är för kort!'
       ]
-
     }),
+    methods: {
+        
+      submit () {
+        if(this.password === this.password2){
+          // lägg till användare
+        } else {
+          // skicka felmeddelande
+        }
+
+      }
+    }  
 }
 </script>
 
@@ -141,5 +154,6 @@ export default {
 #a6{
   background: rgba(0,0,0,0.7);
 }
+
 
 </style>
