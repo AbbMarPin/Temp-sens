@@ -29,7 +29,7 @@
                 </v-form>
               </v-card-text>
               <v-card-actions>
-               <v-btn to="/Adminpage">Tillbaka</v-btn>
+               <v-btn to="/f75778f7425be4db0369d09af37a6c2b9a83dea0e53e7bd57412e4b060e607f7">Tillbaka</v-btn>
 
               </v-card-actions>
             </v-card>
