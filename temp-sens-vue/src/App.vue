@@ -7,8 +7,9 @@
 
 <script>
 import Toolbar from './components/Toolbar'
+import Hallonrummet from './views/Diagram/Hallonrummet'
 export default{
-  components: { Toolbar },
+  components: { Toolbar }, 
   name: 'app'
 }
 
