@@ -6,11 +6,11 @@ Temperature and humidity read with an IOT-device. The data is automatically sent
 
 ### AWS (Backend)
 
-These AWS Lambda functions were used during the project:
+These AWS Lambda functions were used during the project: .............
 
-An overview of the API-gateway:
+An overview of the API-gateway: ..........
 
-DynamoDB:
+DynamoDB: ............
 
 ### Vue (Frontend)
 
@@ -18,4 +18,4 @@ The frontend is built with VUE, VUEX, axios and Vuetify.
 
 ### ESP8266
 
-This code was used to program the micro controller:
+This code was used to program the micro controller: ........
