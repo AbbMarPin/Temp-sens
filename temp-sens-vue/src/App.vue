@@ -7,10 +7,15 @@
 
 <script>
 import Toolbar from './components/Toolbar'
-import Hallonrummet from './views/Diagram/Hallonrummet'
+import tempChartData from './views/temp-chart/tempChart-data.js'
 export default{
-  components: { Toolbar }, 
-  name: 'app'
+  components: { Toolbar },
+  name: 'app',
+  data() {
+    return {
+      tempChartData: tempChartData,
+    }
+  }
 }
 
 </script>

@@ -122,7 +122,7 @@
 
 }
 #navpic{
-  background-image: url("https://raw.githubusercontent.com/AbbMarPin/Temp-sens/master/Bilder/Untitled2.png");
+  background-image: url("https://newevolutiondesigns.com/images/freebies/winter-wallpaper-23.jpg");
   filter: brightness(50%);
   max-width: 15%;
   margin-top: 0,5em;

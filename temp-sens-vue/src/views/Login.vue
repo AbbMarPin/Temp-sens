@@ -42,9 +42,10 @@
                   <v-text-field
                     label="Lösenord"
                     name="Lösenord"
-                    type="Lösenord"
+                    type="password"
                     v-model="password"
                     :rules="passwordRules"
+                    
                     required
                     outlined
                     dark
@@ -100,10 +101,12 @@ const axios = require('axios');
       // user needs an id to remove their devices
       // lambda checks in database if user and pass hash matches and sends back an id
       // vuex keeps the id
+
+    
     let body = { user : this.login, pass : sha256(this.password)};
     let stringbody= JSON.stringify(body);
     // console.log(stringbody)
-    axios.post('https://ec4avk1xoh.execute-api.us-east-1.amazonaws.com/v1/', stringbody)
+    axios.put('https://ec4avk1xoh.execute-api.us-east-1.amazonaws.com/v1/', stringbody)
     .then(function (response) {
       // eslint-disable-next-line
       console.log(response);
@@ -113,10 +116,10 @@ const axios = require('axios');
       console.log(error);
     });
 
-    // eslint-disable-next-line 
-    console.log("user " + this.login + "\npassword " + this.password);
-    // eslint-disable-next-line 
-    console.log("hashed password: " + sha256(this.password));
+    // // eslint-disable-next-line 
+    // console.log("user " + this.login + "\npassword " + this.password);
+    // // eslint-disable-next-line 
+    // console.log("hashed password: " + sha256(this.password));
         
         
     }

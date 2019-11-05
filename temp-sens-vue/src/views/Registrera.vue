@@ -1,3 +1,4 @@
+
 <template>
   <v-app id=background>
       <v-container bg fill-height grid-list-md text-xs-center>
@@ -44,7 +45,7 @@
                     id="Lösenord"
                     label="Lösenord"
                     name="Lösenord"
-                    type="Lösenord"
+                    type="password"
                     v-model="password"
                     :rules="passwordRules"
                     required
@@ -52,7 +53,7 @@
                     dark
                   ></v-text-field>
                   <v-text-field
-                    type="Lösenord"
+                    type="password"
                     label="Bekräfta lösenord"
                     name="Bekräfta lösenord"
                     v-model="password2"
@@ -85,11 +86,17 @@
 </template>
 
 <script>
+// eslint-disable-next-line 
+const sha256 = require('js-sha256');
+// eslint-disable-next-line 
+const axios = require('axios');
 export default {
-    data: () => ({
+   data: () => ({
       drawer: 0,
+      // password:"",
       login: '',
       loginRules: [
+        v => !!v || 'Ett Användarnamn krävs!',
         v => (v && v.length >= 6) || 'Användarnamn är för kort!',
       ],
         password: '',
@@ -99,12 +106,37 @@ export default {
       ],
         password2: '',
       passwordRules2: [
-        // v => !!v || 'Samma lösenord krävs!',
-        v => (!!v && v) !== this.password || 'Lösenordet stämmer inte överens',
+        v => !!v || 'Samma lösenord krävs!',
+        // v => (!!v && v) === this.password || 'Lösenordet stämmer inte överens',
         // v => (v && v.length >= 8) || 'Lösenordet är för kort!'
       ]
-
     }),
+    methods: {
+        
+      submit () {
+        if(this.password === this.password2){
+          // lägg till användare
+              let body = { user : this.login, pass : sha256(this.password)};
+              let stringbody= JSON.stringify(body);
+
+              axios.post('https://ec4avk1xoh.execute-api.us-east-1.amazonaws.com/v1/', stringbody)
+              .then(function (response) {
+                // skriv att allt är bra om status är 200 och fel om 201
+                // eslint-disable-next-line
+                console.log(response);
+              })
+              .catch(function (error) {
+                // eslint-disable-next-line
+                console.log(error);
+              });
+        } else {
+          // skicka felmeddelande
+          // eslint-disable-next-line
+          console.log("Fel lösern!!!!")
+        }
+
+      }
+    }  
 }
 </script>
 
@@ -141,5 +173,6 @@ export default {
 #a6{
   background: rgba(0,0,0,0.7);
 }
+
 
 </style>
