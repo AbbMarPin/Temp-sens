@@ -30,28 +30,36 @@
               <v-card-text>
                 <v-form>
                   <v-text-field
-                    label="Login"
-                    name="login"
+                    label="Användarnamn"
+                    name="Användarnamn"
                     type="text"
                     v-model="login"
                     :rules="loginRules"
                     required
-                    persistent-hint
                     outlined
-                    color= "white"
+                    dark
                   ></v-text-field>
 
                   <v-text-field
-                    id="password"
-                    label="Password"
-                    name="password"
-                    type="password"
+                    id="Lösenord"
+                    label="Lösenord"
+                    name="Lösenord"
+                    type="Lösenord"
                     v-model="password"
                     :rules="passwordRules"
                     required
-                    persistent-hint
                     outlined
-                    color= "white"
+                    dark
+                  ></v-text-field>
+                  <v-text-field
+                    type="Lösenord"
+                    label="Bekräfta lösenord"
+                    name="Bekräfta lösenord"
+                    v-model="password2"
+                    :rules="passwordRules2"
+                    required
+                    outlined
+                    dark
                   ></v-text-field>
                 </v-form>
               </v-card-text>
@@ -75,6 +83,31 @@
       </v-container>
   </v-app>
 </template>
+
+<script>
+export default {
+    data: () => ({
+      drawer: 0,
+      login: '',
+      loginRules: [
+        v => (v && v.length >= 6) || 'Användarnamn är för kort!',
+      ],
+        password: '',
+      passwordRules: [
+        v => !!v || 'Ett lösenord krävs!',
+        v => (v && v.length >= 8) || 'Lösenordet är för kort!'
+      ],
+        password2: '',
+      passwordRules2: [
+        // v => !!v || 'Samma lösenord krävs!',
+        v => (!!v && v) !== this.password || 'Lösenordet stämmer inte överens',
+        // v => (v && v.length >= 8) || 'Lösenordet är för kort!'
+      ]
+
+    }),
+}
+</script>
+
 
 <style>
 
