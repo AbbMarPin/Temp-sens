@@ -25,7 +25,11 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-
+    {
+      path: '/',
+      name: 'TempNU',
+      component: () => import('./views/TempNU.vue')
+    },
     {
       path: '/Registrera',
       name: 'Registrera',
@@ -42,7 +46,7 @@ export default new Router({
       component: () => import('./views/Adminpage.vue')
     },
     {
-      path: '/Manage',
+      path: '/cdiuevcvao47rf483ofdsva4o377fvcoe478avfov8asevfserg',
       name: 'Manage',
       component: () => import('./views/Manage.vue')
     },

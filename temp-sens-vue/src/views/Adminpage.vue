@@ -34,7 +34,7 @@
                 </v-form>
               </v-card-text>
               <v-card-actions>
-            <v-btn to="/Manage">Sensor inställningar</v-btn>
+            <v-btn to="/cdiuevcvao47rf483ofdsva4o377fvcoe478avfov8asevfserg">Sensor inställningar</v-btn>
 
               </v-card-actions>
             </v-card>

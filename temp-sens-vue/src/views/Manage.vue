@@ -16,12 +16,23 @@
             
               <v-card-text>
                 <v-autocomplete
+                ref="sensor"
+              v-model="sensor"
+              :items="sensor"
+              label="sensor"
+              placeholder="Välj Sensor..."
+              required
                 dark
-                ref="Sensor"
-                v-model="Sensor"
-                :items="Sensors"
-                label="Sensor"
-                placeholder="Select..."
+                
+            ></v-autocomplete>
+              <v-autocomplete
+                ref="Plats"
+              v-model="plats"
+              :items="plats"
+              label="Plats"
+              placeholder="Välj Plats..."
+              required
+                dark
                 
             ></v-autocomplete>
                 <v-form>
@@ -31,6 +42,8 @@
               <v-card-actions>
                <v-btn to="/f75778f7425be4db0369d09af37a6c2b9a83dea0e53e7bd57412e4b060e607f7">Tillbaka</v-btn>
 
+               <v-btn absolute right @click="save">Spara</v-btn>
+
               </v-card-actions>
             </v-card>
         </v-flex>
@@ -39,20 +52,17 @@
 </template>
 
 <script>
+export default {
 data: () => ({
-  Sensors: [
-    'Harleys Sensor',
-    'Martins Sensor',
-    'Linus Sensor',
-    'Sagas Sensor',
-    'Idas Sensor'
-  ],
+      sensor: [
+        'Harleys Sensor', 'Martins Sensor', 'Linus Sensor', 'Sagas Sensor','Idas Sensor'],
 
+      plats:[
+        'Hallonrummet', 'Vardagsrummet', 'Klassrummet', 'Pingisrummet', 'Terrariet'],
+
+       
 })
-const routes = [
-  { path: '/Adminpage', component: '/Adminpage.vue' }
-];
- 
+}
 </script>
 
 <style>
@@ -87,5 +97,6 @@ const routes = [
 #a6{
   background: rgba(0,0,0,0.7);
 }
+
 
 </style>
