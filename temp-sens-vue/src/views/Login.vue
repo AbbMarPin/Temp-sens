@@ -102,12 +102,14 @@ const axios = require('axios');
       // vuex keeps the id
     let body = { user : this.login, pass : sha256(this.password)};
     let stringbody= JSON.stringify(body);
-    console.log(stringbody)
+    // console.log(stringbody)
     axios.post('https://ec4avk1xoh.execute-api.us-east-1.amazonaws.com/v1/', stringbody)
     .then(function (response) {
+      // eslint-disable-next-line
       console.log(response);
     })
     .catch(function (error) {
+      // eslint-disable-next-line
       console.log(error);
     });
 
