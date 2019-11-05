@@ -38,7 +38,7 @@
                     v-model="login"
                     :rules="loginRules"
                     required
-                    outlined
+
                     dark
                   ></v-text-field>
 
@@ -50,7 +50,6 @@
                     v-model="password"
                     :rules="passwordRules"
                     required
-                    outlined
                     dark
                   ></v-text-field>
                   <v-text-field
@@ -60,7 +59,6 @@
                     v-model="password2"
                     :rules="passwordRules2"
                     required
-                    outlined
                     dark
                   ></v-text-field>
                 </v-form>
@@ -147,7 +145,7 @@ export default {
 
 #background{
   background-image: url('https://newevolutiondesigns.com/images/freebies/winter-wallpaper-23.jpg');
-  filter: brightness(50%);
+  filter: brightness(70%);
   image-rendering: crisp-edges;
   background-size: cover;
 } 
@@ -157,7 +155,7 @@ export default {
 }
 
 #a3{
-  color: #00B8D4;
+  color: #FAFAFA;
   font-size: 32px;
   text-align: center;
   font-family: "Arial"; 

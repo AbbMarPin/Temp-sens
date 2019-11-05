@@ -9,8 +9,7 @@ import Settingsingar from './views/Settingsingar.vue'
 //  eslint-disable-next-line 
 // import Vardagsrummet from './views/Diagram/Vardagsrummet.vue'
 // eslint-disable-next-line 
-import Vardagsrummet from './views/Diagram/Vardagsrummet.vue'
-
+//import Vardagsrummet from './views/Diagram/Vardagsrummet.vue'
 // // eslint-disable-next-line 
 // import Pingisrummet from './views/Diagram/Pingisrummet.vue'
 // // eslint-disable-next-line 
@@ -41,6 +40,11 @@ export default new Router({
       path: '/Adminpage',
       name: 'Adminpage',
       component: () => import('./views/Adminpage.vue')
+    },
+    {
+      path: '/Manage',
+      name: 'Manage',
+      component: () => import('./views/Manage.vue')
     },
     {
       // Det funkar så rör ej!!

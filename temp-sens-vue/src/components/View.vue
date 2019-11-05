@@ -1,3 +1,4 @@
+<!--
 <template>
   <v-content class="grey lighten-3">
     <div id="core-view">
