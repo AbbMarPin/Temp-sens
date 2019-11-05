@@ -10,7 +10,7 @@ These AWS Lambda functions were used during the project:
 
 An overview of the API-gateway:
 
-
+DynamoDB:
 
 ###Vue (Frontend)
 
