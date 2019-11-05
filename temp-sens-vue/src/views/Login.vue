@@ -55,13 +55,13 @@
               </v-card-text>
               <v-card-actions>
                 <v-btn
+                :disabled="!valid"
                 id=a5
                 xs12
                 color= #00B8D4
                 block
                 tile 
                 @click="submit"
-                :disabled="!valid"
                 >Logga In
                 </v-btn>
 
