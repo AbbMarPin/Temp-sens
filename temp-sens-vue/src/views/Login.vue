@@ -88,7 +88,7 @@ const axios = require('axios');
       login: '',
       valid: true,
       loginRules: [
-        v => (v && v.length >= 5) || 'Användarnamn är för kort!',
+        v => (v && v.length >= 3) || 'Användarnamn är för kort!',
       ],
         password: '',
       passwordRules: [
