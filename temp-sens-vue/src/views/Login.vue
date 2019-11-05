@@ -27,7 +27,9 @@
                 </v-tooltip>
               
               <v-card-text>
-                <v-form>
+                <v-form
+                v-model="valid"
+                >
                   <v-text-field
                     label="Användarnamn"
                     name="Användarnamn"
@@ -51,21 +53,21 @@
                     dark
                   ></v-text-field>
                   
+              <!-- <v-card-actions> -->
+                  <v-btn
+                  :disabled="!valid"
+                  id=a5
+                  xs12
+                  color= #00B8D4
+                  block
+                  tile 
+                  @click="submit"
+                  >Logga In
+                  </v-btn>
+
+              <!-- </v-card-actions> -->
                 </v-form>
               </v-card-text>
-              <v-card-actions>
-                <v-btn
-                id=a5
-                xs12
-                color= #00B8D4
-                block
-                tile 
-                @click="submit"
-                :disabled="!valid"
-                >Logga In
-                </v-btn>
-
-              </v-card-actions>
               <v-text id=a4 >Har du inget konto? Registrera dig </v-text>
                <router-link to="/Registrera">Här</router-link>
             </v-card>
@@ -89,7 +91,7 @@ const axios = require('axios');
       login: '',
       valid: true,
       loginRules: [
-        v => (v && v.length >= 6) || 'Användarnamn är för kort!',
+        v => (v && v.length >= 5) || 'Användarnamn är för kort!',
       ],
         password: '',
       passwordRules: [
@@ -105,7 +107,9 @@ const axios = require('axios');
       // lambda checks in database if user and pass hash matches and sends back an id
       // vuex keeps the id
 
-    if (this.$refs.form.submit()) {
+      console.log(this.$refs.form)
+
+    // if (this.$refs.form.validate()) {
 
 
     let body = { user : this.login, pass : sha256(this.password)};
@@ -115,11 +119,16 @@ const axios = require('axios');
     .then(function (response) {
       // eslint-disable-next-line
       console.log(response);
+      if (response.data.success == true && this.login == "admin"){
+        { route: '/Adminpage'}
+    
+      }
     })
     .catch(function (error) {
       // eslint-disable-next-line
       console.log(error);
     });
+<<<<<<< HEAD
     // eslint-disable-next-line 
     console.log("user " + this.login + "\npassword " + this.password);
     // eslint-disable-next-line 
@@ -129,6 +138,22 @@ const axios = require('axios');
 }
 }
 
+=======
+
+    // // eslint-disable-next-line 
+    // console.log("user " + this.login + "\npassword " + this.password);
+    // // eslint-disable-next-line 
+    // console.log("hashed password: " + sha256(this.password));
+    
+
+
+    // }
+    
+    
+    },
+  }
+  }
+>>>>>>> afb84cd817e40f8fee9a033d2975d6c13f2a7545
 </script>
 
 <style>
