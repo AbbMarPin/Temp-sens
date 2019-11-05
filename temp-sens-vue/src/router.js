@@ -5,7 +5,7 @@ import Home from './views/Home.vue'
 // eslint-disable-next-line 
 import Login from './views/Login.vue'
 // eslint-disable-next-line 
-import Settingsingar from './views/Settingsingar.vue'
+import Settings from './views/Settings.vue'
 //  eslint-disable-next-line 
 // import Vardagsrummet from './views/Diagram/Vardagsrummet.vue'
 // eslint-disable-next-line 
@@ -37,7 +37,7 @@ export default new Router({
       component: () => import('./views/Login.vue')
     },
     {
-      path: '/Adminpage',
+      path: '/f75778f7425be4db0369d09af37a6c2b9a83dea0e53e7bd57412e4b060e607f7',
       name: 'Adminpage',
       component: () => import('./views/Adminpage.vue')
     },
@@ -48,9 +48,9 @@ export default new Router({
     },
     {
       // Det funkar så rör ej!!
-      path: '/settings',
-      name: 'settings',
-      component: () => import('./views/Settingsingar.vue') //Fråga inte...
+      path: '/Settings',
+      name: 'Settings',
+      component: () => import('./views/Settings.vue') //Fråga inte...
     },
     // {
     //   path: '/Vardagsrummet',

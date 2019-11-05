@@ -13,7 +13,6 @@
              class-mx-auto
              id=a6
             >
-             <router-link to="Adminpage">Tillfällig</router-link>
 
                 <v-text id=a3 >Logga in</v-text>
                 <div class="flex-grow-1"></div>
@@ -75,6 +74,7 @@
 </template>
 
 <script>
+import router from '../router'
 // eslint-disable-next-line 
 const sha256 = require('js-sha256');
 // eslint-disable-next-line 
@@ -108,7 +108,7 @@ const axios = require('axios');
 
     // if (this.$refs.form.validate()) {
 
-
+var log=this.login
     let body = { user : this.login, pass : sha256(this.password)};
     let stringbody= JSON.stringify(body);
     // console.log(stringbody)
@@ -116,46 +116,36 @@ const axios = require('axios');
     .then(function (response) {
       // eslint-disable-next-line
       console.log(response);
-      if (response.data.success == true && this.login == "admin"){
+      if (response.data.success == true && log == "admin"){
         // eslint-disable-next-line 
-        { route: '/Adminpage'}
-    
+        router.push("/f75778f7425be4db0369d09af37a6c2b9a83dea0e53e7bd57412e4b060e607f7")
+        console.log("Du är inloggad som admin")
+
+        
+      }else if (response.data.success == true){
+        router.push("/")
       }
+
     })
     .catch(function (error) {
       // eslint-disable-next-line
       console.log(error);
     });
-<<<<<<< HEAD
     // eslint-disable-next-line 
-    console.log("user " + this.login + "\npassword " + this.password);
+    // console.log("user " + this.login + "\npassword " + this.password);
     // eslint-disable-next-line 
-    console.log("hashed password: " + sha256(this.password));
+    // console.log("hashed password: " + sha256(this.password));
     }
   }
 }
-
-
-=======
->>>>>>> 29b42fea05459a5912c0237d43f397010c4c77d0
 
     // // eslint-disable-next-line 
     // console.log("user " + this.login + "\npassword " + this.password);
     // // eslint-disable-next-line 
     // console.log("hashed password: " + sha256(this.password));
-    
-
-
-    // }
-    
-<<<<<<< HEAD
   
-=======
-    
-    },
-  }
-  }
->>>>>>> 29b42fea05459a5912c0237d43f397010c4c77d0
+    // }
+
 </script>
 
 <style>

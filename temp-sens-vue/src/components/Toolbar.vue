@@ -1,7 +1,7 @@
 <template>
-<div class="full-height" >
+<div class="full-height">
 <v-app id="inspire">
- <v-navigation-drawer v-if="['Login','Registrera','Adminpage','Manage'].indexOf($route.name) === -1" 
+ <v-navigation-drawer v-if="['Login','Registrera','Adminpage','Manage','Settings'].indexOf($route.name) === -1" 
       expand-on-hover
       stateless
       permanent
@@ -48,7 +48,7 @@
     <router-link class="right"
      id=b44
      to="Login"
-     >Logga in / Bli medlem
+     >Logga in / Registrera
      </router-link>               <!-- v-flex och v-layout gör att vi kan flytta på login och snurrig.se med ex. justify center -->
     </v-flex>
      

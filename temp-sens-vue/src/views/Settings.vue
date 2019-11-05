@@ -1,5 +1,5 @@
 <template>
-    <v-app id=background>
+  <v-app id=background>
         <v-container bg fill-height grid-list-md text-xs-center>
         <v-flex  
           xs4 offset-4
@@ -13,48 +13,33 @@
              id=a6
              
             >
-            
               <v-card-text>
-                <v-autocomplete
-                dark
-                ref="Sensor"
-                v-model="Sensor"
-                :items="Sensors"
-                label="Sensor"
-                placeholder="Select..."
-                
-            ></v-autocomplete>
                 <v-form>
                 
                 </v-form>
               </v-card-text>
               <v-card-actions>
-               <v-btn to="/Adminpage">Tillbaka</v-btn>
+               <v-btn to="/">Tillbaka</v-btn>
 
               </v-card-actions>
             </v-card>
         </v-flex>
         </v-container>
     </v-app>
+  
 </template>
 
 <script>
-data: () => ({
-  Sensors: [
-    'Harleys Sensor',
-    'Martins Sensor',
-    'Linus Sensor',
-    'Sagas Sensor',
-    'Idas Sensor'
-  ],
+  export default {
+    data: () => ({
+      settings: [],
+    }),
+  }
 
-})
 const routes = [
-  { path: '/Adminpage', component: '/Adminpage.vue' }
+  { path: '/', component: '/.vue' }
 ];
- 
 </script>
-
 <style>
 
 #background{
