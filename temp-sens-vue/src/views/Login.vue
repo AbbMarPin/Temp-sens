@@ -103,7 +103,7 @@ const axios = require('axios');
       // user needs an id to remove their devices
       // lambda checks in database if user and pass hash matches and sends back an id
       // vuex keeps the id
-
+      // eslint-disable-next-line 
       console.log(this.$refs.form)
 
     // if (this.$refs.form.validate()) {
@@ -117,6 +117,7 @@ const axios = require('axios');
       // eslint-disable-next-line
       console.log(response);
       if (response.data.success == true && this.login == "admin"){
+        // eslint-disable-next-line 
         { route: '/Adminpage'}
     
       }
@@ -125,6 +126,7 @@ const axios = require('axios');
       // eslint-disable-next-line
       console.log(error);
     });
+<<<<<<< HEAD
     // eslint-disable-next-line 
     console.log("user " + this.login + "\npassword " + this.password);
     // eslint-disable-next-line 
@@ -134,6 +136,8 @@ const axios = require('axios');
 }
 
 
+=======
+>>>>>>> 29b42fea05459a5912c0237d43f397010c4c77d0
 
     // // eslint-disable-next-line 
     // console.log("user " + this.login + "\npassword " + this.password);
@@ -144,7 +148,14 @@ const axios = require('axios');
 
     // }
     
+<<<<<<< HEAD
   
+=======
+    
+    },
+  }
+  }
+>>>>>>> 29b42fea05459a5912c0237d43f397010c4c77d0
 </script>
 
 <style>
