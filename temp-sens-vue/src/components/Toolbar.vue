@@ -1,6 +1,7 @@
-<template >
+<template>
+
   <v-app id="inspire" v-if="hideToolbar = 1">
-       <v-navigation-drawer v-if="['Login','Registrera'].indexOf($route.name) === -1"
+       <v-navigation-drawer v-if="['Login','Registrera'].indexOf($route.name) === -1" 
       v-model= "myDrawer" 
       expand-on-hover
       floating

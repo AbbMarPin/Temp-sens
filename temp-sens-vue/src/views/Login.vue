@@ -96,8 +96,9 @@ const axios = require('axios');
       ]
     }),
     methods: {
-        
-      submit () {// ToDo user gets an id on reg that gets stored in the db next to pass. 
+
+      
+      submit () { // ToDo user gets an id on reg that gets stored in the db next to pass. 
       // user needs an id to remove their devices
       // lambda checks in database if user and pass hash matches and sends back an id
       // vuex keeps the id
@@ -120,9 +121,15 @@ const axios = require('axios');
     console.log("user " + this.login + "\npassword " + this.password);
     // eslint-disable-next-line 
     console.log("hashed password: " + sha256(this.password));
-        
-        
+    
+    if(response = "iddadsa"){
+      { route: '/Adminpage'}
+  
     }
+
+
+    }
+    
     
     },
   }
