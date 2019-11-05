@@ -116,10 +116,10 @@ const axios = require('axios');
       console.log(error);
     });
 
-    // eslint-disable-next-line 
-    console.log("user " + this.login + "\npassword " + this.password);
-    // eslint-disable-next-line 
-    console.log("hashed password: " + sha256(this.password));
+    // // eslint-disable-next-line 
+    // console.log("user " + this.login + "\npassword " + this.password);
+    // // eslint-disable-next-line 
+    // console.log("hashed password: " + sha256(this.password));
         
         
     }
