@@ -5,7 +5,6 @@
 
           <v-flex  
           xs4 offset-4
-          
           >
             <v-card 
              max-width="450"
@@ -30,37 +29,35 @@
               <v-card-text>
                 <v-form>
                   <v-text-field
-                    label="Login"
-                    name="login"
+                    label="Användarnamn"
+                    name="Användarnamn"
                     type="text"
                     v-model="login"
                     :rules="loginRules"
                     required
-                    persistent-hint
                     outlined
-                    color= "white"
+                    dark
                   ></v-text-field>
 
                   <v-text-field
-                    id="password"
-                    label="Password"
-                    name="password"
-                    type="password"
+                    label="Lösenord"
+                    name="Lösenord"
+                    type="Lösenord"
                     v-model="password"
                     :rules="passwordRules"
                     required
-                    persistent-hint
                     outlined
-                    color= "white"
+                    dark
                   ></v-text-field>
+                  
                 </v-form>
               </v-card-text>
               <v-card-actions>
                 <v-btn
+                id=a5
                 xs12
                 color= #00B8D4
-                block 
-                id=a5
+                block
                 tile 
                 @click="submit"
                 >Logga In
@@ -89,12 +86,12 @@ const axios = require('axios');
       drawer: 0,
       login: '',
       loginRules: [
-        v => !!v || 'Userame is required',
+        v => (v && v.length >= 6) || 'Användarnamn är för kort!',
       ],
         password: '',
       passwordRules: [
-        v => !!v || 'A password is required',
-        v => (v && v.length >= 8) || 'Password is too short!'
+        v => !!v || 'Ett lösenord krävs!',
+        v => (v && v.length >= 8) || 'Lösenordet är för kort!'
       ]
     }),
     methods: {
