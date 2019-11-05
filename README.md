@@ -1,6 +1,6 @@
 # Termometer_example
 
-Temperature and humidity read with an IOT-device. The data is automatically sent to and presented on a website. AWS, VUE and ESP8266. 
+Temperature and humidity read with an IOT-device. The data is automatically sent to and presented on a website. AWS, VUE and ESP8266 have been used. 
 
 ## Structure
 
