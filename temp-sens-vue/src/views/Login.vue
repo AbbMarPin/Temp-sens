@@ -2,7 +2,6 @@
   <v-app id=background>
       <v-container bg fill-height grid-list-md text-xs-center>
         <v-row>
-
           <v-flex  
           xs4 offset-4
           >
@@ -13,8 +12,9 @@
              align-center
              class-mx-auto
              id=a6
-             
             >
+             <router-link to="Adminpage">Tillfällig</router-link>
+
                 <v-text id=a3 >Logga in</v-text>
                 <div class="flex-grow-1"></div>
                 <v-tooltip bottom>
@@ -128,6 +128,17 @@ const axios = require('axios');
       // eslint-disable-next-line
       console.log(error);
     });
+<<<<<<< HEAD
+    // eslint-disable-next-line 
+    console.log("user " + this.login + "\npassword " + this.password);
+    // eslint-disable-next-line 
+    console.log("hashed password: " + sha256(this.password));
+    }
+  }
+}
+}
+
+=======
 
     // // eslint-disable-next-line 
     // console.log("user " + this.login + "\npassword " + this.password);
@@ -142,6 +153,7 @@ const axios = require('axios');
     },
   }
   }
+>>>>>>> afb84cd817e40f8fee9a033d2975d6c13f2a7545
 </script>
 
 <style>
