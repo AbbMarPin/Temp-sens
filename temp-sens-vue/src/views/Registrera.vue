@@ -99,7 +99,7 @@ export default {
       login: '',
       loginRules: [
         v => !!v || 'Ett Användarnamn krävs!',
-        v => (v && v.length >= 6) || 'Användarnamn är för kort!',
+        v => (v && v.length >= 3) || 'Användarnamn är för kort!',
       ],
         password: '',
       passwordRules: [
