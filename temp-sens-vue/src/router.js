@@ -6,13 +6,11 @@ import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 // eslint-disable-next-line 
 import Settingsingar from './views/Settingsingar.vue'
-<<<<<<< HEAD
-// // eslint-disable-next-line 
+//  eslint-disable-next-line 
 // import Vardagsrummet from './views/Diagram/Vardagsrummet.vue'
-=======
 // eslint-disable-next-line 
 import Vardagsrummet from './views/Diagram/Vardagsrummet.vue'
->>>>>>> afb84cd817e40f8fee9a033d2975d6c13f2a7545
+
 // // eslint-disable-next-line 
 // import Pingisrummet from './views/Diagram/Pingisrummet.vue'
 // // eslint-disable-next-line 

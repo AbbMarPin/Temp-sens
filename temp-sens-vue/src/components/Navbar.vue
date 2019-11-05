@@ -1,3 +1,5 @@
+<!--
+
 <template>
    <v-navigation-drawer 
       v-model="myDrawer"
@@ -8,6 +10,8 @@
       v-if= 1                
       >                                             
                                                         <!-- fråga jocke -->
+
+                         <!--                               
       <v-list dense>
         <v-list-item-title id=b50>Menu</v-list-item-title>
         <v-list-item id=b50
@@ -26,4 +30,5 @@
               </v-list>
             </v-navigation-drawer>
 </template>
- 
+
+-->
