@@ -6,7 +6,6 @@
 
           <v-flex  
           xs4 offset-4
-          
           >
             <v-card 
              max-width="450"

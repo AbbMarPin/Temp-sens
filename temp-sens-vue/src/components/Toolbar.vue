@@ -1,8 +1,7 @@
 <template>
 
-  <v-app id="inspire" v-if="hideToolbar = 1">
-       <v-navigation-drawer v-if="['Login','Registrera'].indexOf($route.name) === -1" 
-      v-model= "myDrawer" 
+  <v-app id="inspire">
+       <v-navigation-drawer v-if="['Login','Registrera','Adminpage'].indexOf($route.name) === -1" 
       expand-on-hover
       floating
       hide-overlay
@@ -32,15 +31,15 @@
       app
       clipped-right
       color="white"
-      darks 
+      dark
+      
     >
        <v-flex xs2 ml1 mr2 
-          
-          class="pa-2">
+          class="pa-2" >
 
          </v-flex>
-         <v-flex xs3>
-      <v-toolbar-title>
+         <v-flex xs3 >
+      <v-toolbar-title >
         <router-link id=b45 to="/">Snurrig.se</router-link>              <!-- genom att lägga router-links direkt under inkluderas de i snurrig.se-toolbaren--> 
         </v-toolbar-title>                                               <!-- Dessa router links är "permanenta" och följer med vid sidbyte, rekommenderar att ta bort dem innan ni lämnar in uppgiften åtminstone -->
       </v-flex>
@@ -53,7 +52,7 @@
     </v-flex>
      
       <v-spacer/>                                                                                        <!-- En "v-spacer" fyller allt utrymme mellan två "object", det är lite lättare att använda dessa än det ni gjorde tidigare -->
-      <v-app-bar-nav-icon @click.stop="icon = !icon" to="Settings"><v-icon id=b46>mdi-settings</v-icon></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click.stop="icon = !icon" to="Settings" ><v-icon id=b46>mdi-settings</v-icon></v-app-bar-nav-icon>
     </v-app-bar>
     <img srv="./assets/logo.png">                                                                   <!-- Denna logga finns ej, inget texture -->
 
