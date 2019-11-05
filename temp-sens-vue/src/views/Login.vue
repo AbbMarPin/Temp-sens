@@ -61,6 +61,7 @@
                 block
                 tile 
                 @click="submit"
+                :disabled="!valid"
                 >Logga In
                 </v-btn>
 
@@ -86,6 +87,7 @@ const axios = require('axios');
     data: () => ({
       drawer: 0,
       login: '',
+      valid: true,
       loginRules: [
         v => (v && v.length >= 6) || 'Användarnamn är för kort!',
       ],
@@ -103,7 +105,9 @@ const axios = require('axios');
       // lambda checks in database if user and pass hash matches and sends back an id
       // vuex keeps the id
 
-    
+    if (this.$refs.form.submit()) {
+
+
     let body = { user : this.login, pass : sha256(this.password)};
     let stringbody= JSON.stringify(body);
     // console.log(stringbody)
@@ -117,6 +121,7 @@ const axios = require('axios');
       console.log(error);
     });
 
+<<<<<<< HEAD
     // eslint-disable-next-line 
     console.log("user " + this.login + "\npassword " + this.password);
     // eslint-disable-next-line 
@@ -131,6 +136,16 @@ const axios = require('axios');
     }
     
     
+=======
+    // // eslint-disable-next-line 
+    // console.log("user " + this.login + "\npassword " + this.password);
+    // // eslint-disable-next-line 
+    // console.log("hashed password: " + sha256(this.password));
+        
+        
+    }
+    }
+>>>>>>> e12f66ffeeb4a258bc68afa806556aa857d81b92
     },
   }
 </script>
