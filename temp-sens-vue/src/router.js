@@ -6,7 +6,7 @@ import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 // eslint-disable-next-line 
 import Settingsingar from './views/Settingsingar.vue'
-// // eslint-disable-next-line 
+// eslint-disable-next-line 
 import Vardagsrummet from './views/Diagram/Vardagsrummet.vue'
 // // eslint-disable-next-line 
 // import Pingisrummet from './views/Diagram/Pingisrummet.vue'

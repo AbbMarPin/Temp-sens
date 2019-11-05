@@ -29,7 +29,9 @@
                 </v-tooltip>
               
               <v-card-text>
-                <v-form>
+                <v-form
+                 v-model="valid"
+                 >
                   <v-text-field
                     label="Användarnamn"
                     name="Användarnamn"
@@ -72,6 +74,7 @@
                 id=a5
                 tile 
                 @click="submit"
+                :disabled="!valid"
                 >Registrera
                 </v-btn>
 
@@ -107,7 +110,7 @@ export default {
         password2: '',
       passwordRules2: [
         v => !!v || 'Samma lösenord krävs!',
-        // v => (!!v && v) === this.password || 'Lösenordet stämmer inte överens',
+        v => v === this.password || 'Lösenordet stämmer inte överens',
         // v => (v && v.length >= 8) || 'Lösenordet är för kort!'
       ]
     }),
