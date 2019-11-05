@@ -1,5 +1,5 @@
 <template>
-  <v-app id=background>
+  <v-app id=background fixed>
       <v-container bg fill-height grid-list-md text-xs-center>
         <v-row>
           <v-flex  
@@ -36,8 +36,7 @@
                     type="text"
                     v-model="login"
                     :rules="loginRules"
-                    required
-                    outlined
+                    required             
                     dark
                   ></v-text-field>
 
@@ -47,9 +46,7 @@
                     type="password"
                     v-model="password"
                     :rules="passwordRules"
-                    
                     required
-                    outlined
                     dark
                   ></v-text-field>
                   
@@ -129,6 +126,18 @@ const axios = require('axios');
       // eslint-disable-next-line
       console.log(error);
     });
+<<<<<<< HEAD
+    // eslint-disable-next-line 
+    console.log("user " + this.login + "\npassword " + this.password);
+    // eslint-disable-next-line 
+    console.log("hashed password: " + sha256(this.password));
+    }
+  }
+}
+
+
+=======
+>>>>>>> 29b42fea05459a5912c0237d43f397010c4c77d0
 
     // // eslint-disable-next-line 
     // console.log("user " + this.login + "\npassword " + this.password);
@@ -139,17 +148,21 @@ const axios = require('axios');
 
     // }
     
+<<<<<<< HEAD
+  
+=======
     
     },
   }
   }
+>>>>>>> 29b42fea05459a5912c0237d43f397010c4c77d0
 </script>
 
 <style>
 
 #background{
   background-image: url('https://newevolutiondesigns.com/images/freebies/winter-wallpaper-23.jpg');
-  filter: brightness(50%);
+  filter: brightness(70%);
   image-rendering: crisp-edges;
   background-size: cover;
 } 
@@ -159,7 +172,7 @@ const axios = require('axios');
 }
 
 #a3{
-  color: #00B8D4;
+  color: #FAFAFA;
   font-size: 32px;
   text-align: center;
   font-family: "Arial"; 

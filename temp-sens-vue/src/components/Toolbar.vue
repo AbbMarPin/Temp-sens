@@ -1,21 +1,21 @@
 <template>
-
-  <v-app id="inspire">
-       <v-navigation-drawer v-if="['Login','Registrera','Adminpage'].indexOf($route.name) === -1" 
+<div class="full-height" >
+<v-app id="inspire">
+ <v-navigation-drawer v-if="['Login','Registrera','Adminpage','Manage'].indexOf($route.name) === -1" 
       expand-on-hover
-      floating
-      hide-overlay
+      stateless
       permanent
       clipped
       id="navpic"
+      fixed
       >                                             
       <v-list dense>
         <v-list-item-title id=b50>Menu</v-list-item-title>
-        <v-list-item id=b50
+        <v-list-item dark id=b50
           v-for="item in items"
           :key="item.title"
           router :to="item.route"
-          link
+
           >
           <v-list-item-icon>
               <v-icon>{{ item.icon }}</v-icon>
@@ -34,6 +34,7 @@
       dark
       
     >
+  
        <v-flex xs2 ml1 mr2 
           class="pa-2" >
 
@@ -54,10 +55,9 @@
       <v-spacer/>                                                                                        <!-- En "v-spacer" fyller allt utrymme mellan två "object", det är lite lättare att använda dessa än det ni gjorde tidigare -->
       <v-app-bar-nav-icon @click.stop="icon = !icon" to="Settings" ><v-icon id=b46>mdi-settings</v-icon></v-app-bar-nav-icon>
     </v-app-bar>
-    <img srv="./assets/logo.png">                                                                   <!-- Denna logga finns ej, inget texture -->
-
-
-  </v-app>
+    <img srv="./assets/logo.png">
+</v-app>                                                                   <!-- Denna logga finns ej, inget texture -->
+</div>
 </template>
 
 <script>
@@ -115,17 +115,16 @@
 #b50{
    font-size: 25px;
   text-decoration: none;
-  color: #D1D1D1FF;
+  color: #FAFAFA;
   font-family: "Arial";
-  top: 10% ;
   left: -15% ;
 
 }
 #navpic{
   background-image: url("https://newevolutiondesigns.com/images/freebies/winter-wallpaper-23.jpg");
-  filter: brightness(50%);
+  filter: brightness(65%);
   max-width: 15%;
-  margin-top: 0,5em;
+  margin-top: 2.5em;
   font-size: 25px;
   color: #ffffff !important;
 }

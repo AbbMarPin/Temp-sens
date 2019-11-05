@@ -1,13 +1,10 @@
 <template>
-
-  <v-app id=background>
-      <v-container bg fill-height grid-list-md text-xs-center>
-        <v-row>
-
-          <v-flex  
+    <v-app id=background>
+        <v-container bg fill-height grid-list-md text-xs-center>
+        <v-flex  
           xs4 offset-4
           >
-            <v-card 
+        <v-card 
              max-width="450"
              tile
              justify-center
@@ -16,52 +13,36 @@
              id=a6
              
             >
-                <v-text id=a3 >Adminsida</v-text>
-                <div class="flex-grow-1"></div>
-                <v-tooltip bottom>
-                <template v-slot:activator="{ on }">
-                </template>
-                </v-tooltip>
-                <v-tooltip right>
-                <template v-slot:activator="{ on }">
-                </template>
-                </v-tooltip>
-              
               <v-card-text>
                 <v-form>
-                  
-
+                
                 </v-form>
               </v-card-text>
               <v-card-actions>
-            <v-btn to="/Manage">Sensor inställningar</v-btn>
+               <v-btn to="/Adminpage">Tillbaka</v-btn>
 
               </v-card-actions>
             </v-card>
-          </v-flex>
-        </v-row>
-      </v-container>
-  </v-app>
+        </v-flex>
+        </v-container>
+    </v-app>
 </template>
 
 <script>
 
 const routes = [
-  { path: '/Manage', component: '/Manage.vue' }
+  { path: '/Adminpage', component: '/Adminpage.vue' }
 ];
 
 </script>
 
-
 <style>
-
 
 #background{
   background-image: url('https://newevolutiondesigns.com/images/freebies/winter-wallpaper-23.jpg');
   filter: brightness(70%);
   image-rendering: crisp-edges;
   background-size: cover;
-  
 } 
 
 #a2{
@@ -87,6 +68,5 @@ const routes = [
 #a6{
   background: rgba(0,0,0,0.7);
 }
-
 
 </style>
