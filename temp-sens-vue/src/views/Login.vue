@@ -98,8 +98,9 @@ const axios = require('axios');
       ]
     }),
     methods: {
-        
-      submit () {// ToDo user gets an id on reg that gets stored in the db next to pass. 
+
+      
+      submit () { // ToDo user gets an id on reg that gets stored in the db next to pass. 
       // user needs an id to remove their devices
       // lambda checks in database if user and pass hash matches and sends back an id
       // vuex keeps the id
@@ -120,6 +121,22 @@ const axios = require('axios');
       console.log(error);
     });
 
+<<<<<<< HEAD
+    // eslint-disable-next-line 
+    console.log("user " + this.login + "\npassword " + this.password);
+    // eslint-disable-next-line 
+    console.log("hashed password: " + sha256(this.password));
+    
+    if(response = "iddadsa"){
+      { route: '/Adminpage'}
+  
+    }
+
+
+    }
+    
+    
+=======
     // // eslint-disable-next-line 
     // console.log("user " + this.login + "\npassword " + this.password);
     // // eslint-disable-next-line 
@@ -128,6 +145,7 @@ const axios = require('axios');
         
     }
     }
+>>>>>>> e12f66ffeeb4a258bc68afa806556aa857d81b92
     },
   }
 </script>
