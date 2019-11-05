@@ -76,7 +76,7 @@
         { title: 'Pingisrummet', route: '/Pingisrummet'},
         { title: 'Klassrummet', route: '/Klassrummet'},
         { title: 'Vardagsrummet', route: '/Vardagsrummet'}, 
-        { title: 'Hallonsrummet', route: '/Hallonsrummet'},
+        { title: 'Hallonrummet', route: '/Hallonrummet'},
       ],
     }),  
  }
