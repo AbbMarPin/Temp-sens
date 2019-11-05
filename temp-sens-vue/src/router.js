@@ -25,11 +25,12 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-    {
-      path: '/',
-      name: 'TempNU',
-      component: () => import('./views/TempNU.vue')
-    },
+    
+     {
+       path: '/',
+       name: 'TempNU',
+       component: () => import('./views/TempNU.vue')
+     },
     {
       path: '/Registrera',
       name: 'Registrera',

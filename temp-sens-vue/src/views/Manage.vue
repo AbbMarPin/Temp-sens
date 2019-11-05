@@ -35,6 +35,16 @@
                 dark
                 
             ></v-autocomplete>
+            <v-autocomplete
+                ref="Ägare"
+              v-model="Ägare"
+              :items="Ägare"
+              label="Ägare"
+              placeholder="Välj Ägare..."
+              required
+                dark
+                
+            ></v-autocomplete>
                 <v-form>
                 
                 </v-form>
@@ -52,16 +62,21 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
 data: () => ({
+   info: null,
       sensor: [
         'Harleys Sensor', 'Martins Sensor', 'Linus Sensor', 'Sagas Sensor','Idas Sensor'],
 
       plats:[
-        'Hallonrummet', 'Vardagsrummet', 'Klassrummet', 'Pingisrummet', 'Terrariet'],
-
-       
-})
+        'Hallonrummet', 'Vardagsrummet', 'Klassrummet', 'Pingisrummet', 'Terrariet'],   
+}),
+ mounted () {
+    axios
+      .get('https://y5litcpqqk.execute-api.us-east-1.amazonaws.com/test1/device/all')
+      .then(response => (this.info = response))
+}
 }
 </script>
 
