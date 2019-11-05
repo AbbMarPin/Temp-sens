@@ -1,6 +1,6 @@
 # Termometer_example
 
-Temperature and humidity read with an IOT-device. The data is automatically sent to a database and then presented on a website. Database and API-gateway are hosted with AWS. Website deisgned and built in VUE data is gathered by ESP8266. 
+Temperature and humidity read with an IOT-device. The data is automatically sent to a database and then presented on a website. Database and API-gateway are hosted with AWS. Website deisgned and built in VUE. Data is gathered with ESP8266. 
 
 ## Structure
 
