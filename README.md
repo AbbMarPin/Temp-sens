@@ -9,15 +9,14 @@ Temperature and humidity read with an IOT-device. The data is automatically sent
 Things you need in order to open the project:
 
 ```
-Visual Studio Code
-  npm install vue-apexcharts apexcharts
-Arduino
-AWS
+-Visual Studio Code
+
+  To ensure a completeley functioning website, write the following in the terminal in Visual Studio Code: "npm install vue-apexcharts apexcharts"
 ```
 
 ### Deployment
 
-To deploy the website, write the following command in your console:
+To deploy the website, write the following command in your terminal in Visual Studio Code:
 
 ```
 npm run serve
