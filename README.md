@@ -17,10 +17,9 @@ Things you need in order to open the project:
 
 ### Deployment
 
-To deploy the website, write the following command in your terminal in Visual Studio Code:
-
 ```
-npm run serve
+To deploy the website, write the following 
+command in your terminal in Visual Studio Code: "npm run serve"
 ```
 
 ## Built With
@@ -63,6 +62,6 @@ npm run serve
 
 The frontend is built with VUE, VUEX, axios and Vuetify.
 
-### ESP8266
+### Arduino
 
-This code was used to program the micro controller: ........
+Arduino was used to program the micro controller.
