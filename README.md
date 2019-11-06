@@ -2,12 +2,15 @@
 
 Temperature and humidity read with an IOT-device. The data is automatically sent to a database and then presented on a website. Database and API-gateway are hosted with AWS. The website is deisgned and built in VUE. The data is gathered with an ESP8266. 
 
+## Getting started
+
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Things you need in order to open the project:
 
 ```
 Visual Studio Code
+  npm install vue-apexcharts apexcharts
 Arduino
 AWS
 ```
