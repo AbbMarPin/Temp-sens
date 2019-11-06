@@ -6,7 +6,33 @@ Temperature and humidity read with an IOT-device. The data is automatically sent
 
 ### AWS (Backend)
 
-These AWS Lambda functions were used during the project: .............
+These AWS Lambda functions were used during the project: 
+
+Passwod_Add:
+
+Password_Check:
+
+Password_Remove:
+
+TempData_AddDevice:
+
+TempData_ClearDeviceData:
+
+TempData_DeleteDevice:
+
+TempData_GetDevice.js:
+
+TempData_GetDeviceData.js:
+
+TempData_GetDevices.js:
+
+TempData_GetEverything.js:
+
+TempData_UpdateDevice.js:
+
+TempData_UpdateDeviceData.js:
+
+TempData_UpdateDeviceUpdateInterval.js:
 
 An overview of the API-gateway: ..........
 
