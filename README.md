@@ -8,7 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Deployment
 
-To deploy the website, write the following in your console:
+To deploy the website, write the following command in your console:
 
 ```
 npm run serve
