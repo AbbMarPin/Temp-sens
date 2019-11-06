@@ -17,9 +17,23 @@ export default {
     }
   },
       mounted () {
-      axios.get(url).then(response => {
-            this.results = response.data
-            console.log(this.results)
+        var results = [];
+        // console.log(typeof(results))
+        var i = 0;
+        function a(item) {
+          // console.log(typeof(item.TheOwner))
+            results.push({name: item.Name, place: item.Place, theowner: item.TheOwner, Temp : item.CurrentTemp, Hum : item.CurrentHum, LastUpdate : item.LastUpdate});
+            // console.log(results)
+        }
+      axios.post(url, {}).then(response => {
+
+            console.log(response)
+
+            response.data.forEach(a); 
+
+            this.results = results
+
+            // console.log(this.results)
           });
 
   },
