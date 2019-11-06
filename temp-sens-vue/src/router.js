@@ -26,8 +26,13 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     
+    {
+      path: '/',
+      name: 'Tabell',
+      component: () => import('./components/Tabell.vue')
+    },
      {
-       path: '/',
+       path: '/1',
        name: 'TempNU',
        component: () => import('./views/TempNU.vue')
      },
