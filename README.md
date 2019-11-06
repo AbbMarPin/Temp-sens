@@ -26,37 +26,7 @@ command in your terminal in Visual Studio Code: "npm run serve"
 
 ### AWS (Backend)
 
-#### These AWS Lambda functions are used in the project: 
-
-##### Passwod_Add:
-
-##### Password_Check:
-
-##### Password_Remove:
-
-##### TempData_AddDevice:
-
-##### TempData_ClearDeviceData:
-
-##### TempData_DeleteDevice:
-
-##### TempData_GetDevice.js:
-
-##### TempData_GetDeviceData.js:
-
-##### TempData_GetDevices.js:
-
-##### TempData_GetEverything.js:
-
-##### TempData_UpdateDevice.js:
-
-##### TempData_UpdateDeviceData.js:
-
-##### TempData_UpdateDeviceUpdateInterval.js:
-
-#### An overview of the API-gateway: ..........
-
-#### DynamoDB: ............
+To build the backend VUEX, Lambda, Amazon DynamoDB and Amazon API-gateway were used.  
 
 ### Vue (Frontend)
 
