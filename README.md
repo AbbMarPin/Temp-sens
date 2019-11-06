@@ -13,7 +13,8 @@ To deploy the website, write the following command in your console:
 ```
 npm run serve
 ```
-## Structure
+
+## Built With
 
 ### AWS (Backend)
 
