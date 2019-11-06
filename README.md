@@ -11,7 +11,8 @@ Things you need in order to open the project:
 ```
 -Visual Studio Code
 
-  To ensure a completeley functioning website, write the following in the terminal in Visual Studio Code: "npm install vue-apexcharts apexcharts"
+  To ensure a completeley functioning website, 
+  write the following in the terminal in Visual Studio Code: "npm install vue-apexcharts apexcharts"
 ```
 
 ### Deployment
