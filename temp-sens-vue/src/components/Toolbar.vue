@@ -1,27 +1,27 @@
 <template>
-<div class="full-height" v-if="['TempNU'].indexOf($route.name) === -1" >
-<v-app id="inspire">
- <v-navigation-drawer v-if="['Login','Registrera','Adminpage','Manage','Settings'].indexOf($route.name) === -1" 
+<div class="full-height" v-if="[''].indexOf($route.name) === -1" >  <!--Used to deactivate the toolbar on specific router links -->
+<v-app id="inspire">                                                                                          <!--Used to deactivate the drawer on specific router links -->
+ <v-navigation-drawer v-if="['Login','Registrera','Adminpage','Manage','Settings'].indexOf($route.name) === - 1"  
       expand-on-hover
       stateless
       permanent
       clipped
       id="navpic"
-      fixed
-      >                                             
-      <v-list dense>
+      fixed     
+      >               <!--Drawer placement & looks -->                                                  
+      <v-list dense>                                                                       <!--Drawerns looks and routes-->
         <v-list-item-title id=b50>Menu</v-list-item-title>
         <v-list-item dark id=b50
           v-for="item in items"
           :key="item.title"
-          router :to="item.route"
+          router :to="item.route"   
 
           >
           <v-list-item-icon>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title > <router-link >{{ item.title }}</router-link>{{ item.title }}</v-list-item-title>  
+              <v-list-item-title > <router-link >{{ item.title }}</router-link>{{ item.title }}</v-list-item-title>   
             </v-list-item-content> <!-- ^^^ link and title in same title ^^^ --> 
           </v-list-item>
               </v-list>
@@ -82,9 +82,9 @@
 
 </script>
 
-<style>
-
-#b44{
+ <style> 
+                                               /* Color, placement och pictures*/
+#b44{ 
   font-size: 18px !important;
   text-decoration: none;
   text-align: center;
