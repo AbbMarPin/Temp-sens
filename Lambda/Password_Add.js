@@ -24,7 +24,7 @@ if (e.body) {
     
     var res = JSON.parse(JSON.stringify(body.user, function(a, b) {
         return typeof b === "string" ? b.toLowerCase() : b
-      }));
+      })); // converterar till små bokstäver
       
     docClient.scan(scanningParameters, function(err, data) {
         if (err) {
@@ -40,7 +40,7 @@ if (e.body) {
             for(var i = 0; i < data.Items.length; i++){
                 // console.log(i)
                 // console.log(data.Items[i])
-                if (data.Items[i].username == res){
+                if (data.Items[i].username == res){ // om ett användarkonto med samma namn redan finns
                     console.log("Finns Redan!")
                     callback(null, {
                         statusCode: 201, // Bad Request
@@ -58,12 +58,12 @@ if (e.body) {
                 }
             }
             
-            const  hash = (Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15));
+            const  hash = (Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)); // en random sräng för id
             
             
             
             var params = {
-            Item: { username: res, id: hash, password: body.pass},
+            Item: { username: res, id: hash, password: body.pass}, // vad den lägger till
             TableName: 'Users'
             };
             
