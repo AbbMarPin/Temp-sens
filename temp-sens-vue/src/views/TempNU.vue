@@ -2,7 +2,7 @@
 <div id="app">
   
   <div class="card-section">
-  <!-- <p> {{ results}} </p> -->
+  <p> {{ results}} </p>
   </div>
 </div>
 </template>
