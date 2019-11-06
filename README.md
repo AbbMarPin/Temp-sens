@@ -17,7 +17,7 @@ npm run serve
 
 ### AWS (Backend)
 
-#### These AWS Lambda functions were used during the project: 
+#### These AWS Lambda functions are used in the project: 
 
 ##### Passwod_Add:
 
