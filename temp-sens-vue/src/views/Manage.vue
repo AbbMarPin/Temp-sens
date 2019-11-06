@@ -11,7 +11,6 @@
              align-center
              class-mx-auto
              id=a6
-             
             >
             
               <v-card-text>
@@ -36,11 +35,11 @@
                 
             ></v-autocomplete>
             <v-autocomplete
-                ref="Ägare"
-              v-model="Ägare"
-              :items="Ägare"
-              label="Ägare"
-              placeholder="Välj Ägare..."
+                ref="Uppdaterings Frekvens"
+              v-model="Uppdateringsfrekvens"
+              :items="Uppdateringsfrekvens"
+              label="Uppdaterings Frekvens"
+              placeholder="Välj Uppdaterings Frekvens..."
               required
                 dark
                 
@@ -52,7 +51,12 @@
               <v-card-actions>
                <v-btn to="/f75778f7425be4db0369d09af37a6c2b9a83dea0e53e7bd57412e4b060e607f7">Tillbaka</v-btn>
 
-               <v-btn absolute right @click="save">Spara</v-btn>
+               <v-btn
+                  :loading="loading"
+                  :disabled="loading"
+                   @click="loader = 'loading'" 
+                   absolute right 
+                   v-progress-circular>Spara</v-btn>
 
               </v-card-actions>
             </v-card>
@@ -62,20 +66,47 @@
 </template>
 
 <script>
-import axios from 'axios'
-const url = "https://y5litcpqqk.execute-api.us-east-1.amazonaws.com/test1/device/all";
 export default {
   data() {
     return {
-      results: [],
+      sensor: [
+        "Harleys Sensor",
+        "Martins Sensor",
+        "Sagas Sensor",
+        "Linus Sensor",
+        "Idas Sensor"
+      ],
+      plats: [
+        "Terrariet",
+        "Klassrummet",
+        "Vardagsrummet",
+        "Pingisrummet",
+        "Hallonrummet"
+      ],
+      Uppdateringsfrekvens: [
+        "Harleys Sensor",
+        "Martins Sensor",
+        "Sagas Sensor",
+        "Linus Sensor",
+        "Idas Sensor"
+      ],
+      loader: null,
+      loading: false,
+      loading2: false,
+      loading3: false,
+      loading4: false,
+      loading5: false,
     }
   },
-      mounted () {
-      axios.get(url).then(response => {
-            this.results = response.data
-            console.log(this.results)
-          });
+    watch: {
+    loader () {
+      const l = this.loader
+      this[l] = !this[l]
 
+      setTimeout(() => (this[l] = false), 3000)
+
+      this.loader = null
+    },
   },
 
 }
