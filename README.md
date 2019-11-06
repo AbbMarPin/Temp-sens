@@ -8,7 +8,10 @@ Temperature and humidity read with an IOT-device. The data is automatically sent
 
 #### These AWS Lambda functions were used during the project: 
 
-'const AWS = require('aws-sdk'); //AWS
+##### Passwod_Add:
+
+´´´
+const AWS = require('aws-sdk'); //AWS
 const crypto = require('crypto');
 //För Dynamodb
 const docClient = new AWS.DynamoDB.DocumentClient({region: 'us-east-1'});
@@ -123,9 +126,8 @@ if (e.body) {
         
     }});
 }  
- }'
-
-##### Passwod_Add:
+ }
+´´´
 
 ##### Password_Check:
 
