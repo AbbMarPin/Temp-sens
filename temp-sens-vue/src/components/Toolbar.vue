@@ -1,5 +1,5 @@
 <template>
-<div class="full-height">
+<div class="full-height" v-if="['TempNU'].indexOf($route.name) === -1" >
 <v-app id="inspire">
  <v-navigation-drawer v-if="['Login','Registrera','Adminpage','Manage','Settings'].indexOf($route.name) === -1" 
       expand-on-hover

@@ -1,29 +1,29 @@
 <template>
 <div id="app">
-  {{ info }}
+  
+  <div class="card-section">
+  <p> {{ results}} </p>
+  </div>
 </div>
 </template>
 
 <script>
 import axios from 'axios'
+const url = "https://y5litcpqqk.execute-api.us-east-1.amazonaws.com/test1/device/all";
 export default {
-    data() {
-        return {
-            info: null            
-        }
-    },
+  data() {
+    return {
+      results: [],
+    }
+  },
       mounted () {
-    axios
-      .get('https://y5litcpqqk.execute-api.us-east-1.amazonaws.com/test1/device/all')
-      .then(response => (this.info = response))
-    //   .then(response => (this.info = response.name.bpi))
+      axios.get(url).then(response => {
+            this.results = response.data
+            console.log(this.results)
+          });
 
   },
-  filters: {
-  currencydecimal (value) {
-    return value.toFixed(2)
-  }
-},
+
 }
 </script>
 
