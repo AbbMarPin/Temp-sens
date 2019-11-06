@@ -84,11 +84,11 @@ export default {
         "Hallonrummet"
       ],
       Uppdateringsfrekvens: [
-        "Harleys Sensor",
-        "Martins Sensor",
-        "Sagas Sensor",
-        "Linus Sensor",
-        "Idas Sensor"
+        "10 s",
+        "1 min",
+        "10 min",
+        "30 min",
+        "60 min"
       ],
       loader: null,
       loading: false,

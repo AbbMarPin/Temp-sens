@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
+    <Tabell/>
     <Toolbar/>
   </div>
 </template>
@@ -8,8 +9,9 @@
 <script>
 import Toolbar from './components/Toolbar'
 import tempChartData from './views/temp-chart/tempChart-data.js'
+import Tabell from './components/Tabell'
 export default{
-  components: { Toolbar },
+  components: { Toolbar, Tabell },
   name: 'app',
   data() {
     return {

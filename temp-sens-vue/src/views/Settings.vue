@@ -11,8 +11,11 @@
              align-center
              class-mx-auto
              id=a6
-             
             >
+              <v-switch dark flat ></v-switch>
+              <v-switch dark flat ></v-switch>
+              <v-switch dark flat ></v-switch>
+              <v-switch dark flat ></v-switch>
               <v-card-text>
                 <v-form>
                 
@@ -29,11 +32,16 @@
   
 </template>
 
+
 <script>
   export default {
-    data: () => ({
-      settings: [],
-    }),
+    data () {
+      return {
+        switch1: true,
+        switch2: false,
+        settings: [],
+      }
+    },
   }
 
 const routes = [
@@ -72,5 +80,6 @@ const routes = [
 #a6{
   background: rgba(0,0,0,0.7);
 }
+
 
 </style>
