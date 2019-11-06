@@ -18,8 +18,8 @@ const String host = "y5litcpqqk.execute-api.us-east-1.amazonaws.com";
 // API Stage to use, paste your stage name here
 const String stage = "test1";
 
-const String name = "Name=Harelys_Mätare"; 
-const String owner = "&TheOwner=Harley"; 
+const String name = "Name=Sagas_Matare"; 
+const String owner = "&TheOwner=Saga"; 
 //Name of unit
 // Warning: This fingerprint expires December 14th 2019.
 // To update it, view the SSL certificate in your browser:

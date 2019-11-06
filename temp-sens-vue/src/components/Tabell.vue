@@ -3,7 +3,7 @@
   <v-simple-table>
     <template v-slot:default>
       <thead>
-        <tr>
+        <tr> <!-- columns-->
           <th class="text-left">Name</th>
           <th class="text-left">Place</th>
           <th class="text-left">Owner</th>
@@ -13,8 +13,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in Tempdata" :key="item.Name">
-          <td>{{ item.name }}</td>
+        <tr v-for="item in Tempdata" :key="item.Name"> 
+          <td>{{ item.name }}</td>  <!-- data to show in table-->
           <td>{{ item.place }}</td>
           <td>{{ item.theowner }}</td>
           <td>{{ item.Temp }}</td>
@@ -45,17 +45,6 @@ const axios = require('axios');
      
     }
   },
-//  data() {//All data som ska finnas i komponenten
-//     return {
-//         smth: [
-//             // {
-//             //     Name: item.Name
-//             //     Place: item.Place
-//             //     Temp: item.Temp
-//             // }
-//         ]
-//     }
-//  },
  
     methods: { //Metoder
       async fetch(){
