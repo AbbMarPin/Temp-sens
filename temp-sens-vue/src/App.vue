@@ -1,17 +1,23 @@
 <template>
   <div id="app">
+        <Tabell/>
     <router-view/>
     <Toolbar/>
-    <Footer/>
   </div>
 </template>
 
 <script>
 import Toolbar from './components/Toolbar'
-import Footer from './components/Footer'
+import tempChartData from './views/temp-chart/tempChart-data.js'
+import Tabell from './components/Tabell'
 export default{
-  components: { Toolbar, Footer },
-  name: 'app'
+  components: { Toolbar, Tabell },
+  name: 'app',
+  data() {
+    return {
+      tempChartData: tempChartData,
+    }
+  }
 }
 
 </script>

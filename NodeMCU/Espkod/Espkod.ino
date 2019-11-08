@@ -18,7 +18,9 @@ const String host = "y5litcpqqk.execute-api.us-east-1.amazonaws.com";
 // API Stage to use, paste your stage name here
 const String stage = "test1";
 
-const String name = "Name=Harelys_Mätare"; //Name of unit
+const String name = "Name=Sagas_Matare"; 
+const String owner = "&TheOwner=Saga"; 
+//Name of unit
 // Warning: This fingerprint expires December 14th 2019.
 // To update it, view the SSL certificate in your browser:
 //  1. Go to the host URL, se example belwo
@@ -194,7 +196,7 @@ Response makeRequest(String type, String uri, String query, String payload)
 
 void UpdateUpdateFreq(){
 
-  Response getRes = makeRequest("GET", "/device", name , ""); // Gett current device data including updatefreq
+  Response getRes = makeRequest("GET", "/device", name, ""); // Gett current device data including updatefreq
 
   if(getRes.statusCode == 404){ // 404 Error if no device is found
     Serial.println("Enhet hittades inte, starta om tack"); // only possible if device is deleted from the database while running
@@ -254,7 +256,7 @@ void setup() {
     Serial.println("Ingen info hittades, skapar ny enhet...");
 
     // Adding device to database
-    Response postRes = makeRequest("POST", "/device", name, "");
+    Response postRes = makeRequest("POST", "/device", name + owner, "");
     if(postRes.statusCode == 201) // Created
     {
       // Give instructions to user
