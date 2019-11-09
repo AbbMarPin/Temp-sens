@@ -6,18 +6,6 @@ import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 // eslint-disable-next-line 
 import Settings from './views/Settings.vue'
-//  eslint-disable-next-line 
-// import Vardagsrummet from './views/Diagram/Vardagsrummet.vue'
-// eslint-disable-next-line 
-//import Vardagsrummet from './views/Diagram/Vardagsrummet.vue'
-// // eslint-disable-next-line 
-// import Pingisrummet from './views/Diagram/Pingisrummet.vue'
-// // eslint-disable-next-line 
-// import Terrariet from './views/Diagram/Terrariet.vue'
-// // eslint-disable-next-line 
-// import Klassrummet from './views/Diagram/Klassrummet.vue'
-// // eslint-disable-next-line 
-// import Hallonrummet from './views/Diagram/Hallonrummet.vue'
 
 Vue.use(Router)
 
@@ -27,9 +15,9 @@ export default new Router({
   routes: [
     
     {
-      path: '/',
-      name: 'Tabell',
-      component: () => import('./components/Tabell.vue')
+      path: '/',                                             //sökväg
+      name: 'Tabell',                                        //namn
+      component: () => import('./components/Tabell.vue')     //Hämta från komponent
     },
      {
        path: '/1',
@@ -57,34 +45,10 @@ export default new Router({
       component: () => import('./views/Manage.vue')
     },
     {
-      // Det funkar så rör ej!!
       path: '/Settings',
       name: 'Settings',
-      component: () => import('./views/Settings.vue') //Fråga inte...
+      component: () => import('./views/Settings.vue')
     },
-    // {
-    //   path: '/Vardagsrummet',
-    //   name: 'Vardagsrummet',
-    //   component: () => import('./views/Diagram/Vardagsrummet.vue')
-    // },
-    // {
-    //   path: '/Pingisrummet',
-    //   name: 'Pingisrummet',
-    //   component: () => import('./views/Diagram/Pingisrummet.vue')
-    // },
-    // {
-    //   path: '/Terrariet',
-    //   name: 'LogTerrarietin',
-    //   component: () => import('./views/Diagram/Terrariet.vue')
-    // },
-    // {
-    //   path: '/Klassrummet',
-    //   name: 'Klassrummet',
-    //   component: () => import('./views/Diagram/Klassrummet.vue')
-    // },{
-    //   path: '/Hallonrummet',
-    //   name: 'Hallonrummet',
-    //   component: () => import('./views/Diagram/Hallonrummet.vue')
-    // }
+   
   ]
 })
